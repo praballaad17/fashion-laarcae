@@ -1,2 +1,0 @@
-# fashion-laarcae
-freelencer project
