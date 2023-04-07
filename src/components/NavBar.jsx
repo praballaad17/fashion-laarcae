@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "/logo/04_Homepage.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import * as ROUTES from "../constant/routes";
 export default function NavBar() {
+  const [isCart, setCart] = useState(false);
   useEffect(() => {
     var stickyTop = $(".header-menu").offset().top;
     $(window).on("scroll", function () {
@@ -463,72 +467,77 @@ export default function NavBar() {
                       <div className="top-shop-contain">
                         <div className="block-shop">
                           <div className="top-shop-title">
-                            <a href="#">
-                              <i className="fa fa-shopping-cart"></i>
+                            <a onClick={() => setCart((prev) => !prev)}>
+                              <FontAwesomeIcon icon={faCartShopping} />
                               <span className="count co1">2</span>
                             </a>
                           </div>
-                          <div className="wish-cart margin">
-                            <div className="wish-item">
-                              <div className="cat">
-                                <a className="image" href="#">
-                                  <img src="img/product/c1.jpg" alt="" />
-                                </a>
-                                <div className="cat_two">
-                                  <p>
-                                    <a href="#">vintage-lambskin-shoe</a>
-                                  </p>
-                                  <p>
-                                    <span className="agn">1 </span>x
-                                    <span>$199.00</span>
-                                  </p>
-                                </div>
-                                <div className="cat_icon">
-                                  <a className="remove" href="#">
-                                    ×
+                          {isCart && (
+                            <div className="wish-cart margin active">
+                              <div className="wish-item">
+                                <div className="cat">
+                                  <a className="image" href="#">
+                                    <img src="img/product/c1.jpg" alt="" />
                                   </a>
+                                  <div className="cat_two">
+                                    <p>
+                                      <a href="#">vintage-lambskin-shoe</a>
+                                    </p>
+                                    <p>
+                                      <span className="agn">1 </span>x
+                                      <span>$199.00</span>
+                                    </p>
+                                  </div>
+                                  <div className="cat_icon">
+                                    <a className="remove" href="#">
+                                      ×
+                                    </a>
+                                  </div>
+                                </div>
+                                <div className="cat">
+                                  <a className="image" href="#">
+                                    <img src="img/product/c2.jpg" alt="" />
+                                  </a>
+                                  <div className="cat_two">
+                                    <p>
+                                      <a href="#">luxury-leather-bag</a>
+                                    </p>
+                                    <p>
+                                      <span className="agn">1</span> x
+                                      <span>$99.00</span>
+                                    </p>
+                                  </div>
+                                  <div className="cat_icon">
+                                    <a className="remove" href="#">
+                                      ×
+                                    </a>
+                                  </div>
                                 </div>
                               </div>
-                              <div className="cat">
-                                <a className="image" href="#">
-                                  <img src="img/product/c2.jpg" alt="" />
-                                </a>
-                                <div className="cat_two">
-                                  <p>
-                                    <a href="#">luxury-leather-bag</a>
+                              <div className="wish-item">
+                                <div className="cat_bottom">
+                                  <p className="total">
+                                    <strong>Subtotal:</strong>
+                                    <span className="amount">$298.00</span>
                                   </p>
-                                  <p>
-                                    <span className="agn">1</span> x
-                                    <span>$99.00</span>
+                                  <p className="buttons">
+                                    <Link
+                                      className="button wc-forward"
+                                      to={ROUTES.CART}
+                                    >
+                                      View Cart
+                                    </Link>
+                                    <Link
+                                      className="button checkout wc-forward"
+                                      to={ROUTES.CHECKOUT}
+                                    >
+                                      Checkout
+                                    </Link>
                                   </p>
-                                </div>
-                                <div className="cat_icon">
-                                  <a className="remove" href="#">
-                                    ×
-                                  </a>
                                 </div>
                               </div>
                             </div>
-                            <div className="wish-item">
-                              <div className="cat_bottom">
-                                <p className="total">
-                                  <strong>Subtotal:</strong>
-                                  <span className="amount">$298.00</span>
-                                </p>
-                                <p className="buttons">
-                                  <a className="button wc-forward" href="#">
-                                    View Cart
-                                  </a>
-                                  <a
-                                    className="button checkout wc-forward"
-                                    href="#"
-                                  >
-                                    Checkout
-                                  </a>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
+                          )}
                         </div>
                       </div>
                     </div>

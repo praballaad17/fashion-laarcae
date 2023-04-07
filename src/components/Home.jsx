@@ -4,18 +4,9 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowUp,
-  faBars,
-  faBell,
-  faBookmark,
   faEye,
   faHeart,
-  faHome,
-  faList,
-  faMailBulk,
-  faPlus,
   faRetweet,
-  faSignOutAlt,
-  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 import OwlCarousel from "react-owl-carousel";
@@ -436,10 +427,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <div id="toTop">
-        <FontAwesomeIcon icon={faArrowUp} />
-      </div>
 
       {open && (
         <ProductModal
