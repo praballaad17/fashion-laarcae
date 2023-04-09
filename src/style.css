@@ -854,7 +854,7 @@ a.min1:hover {
   width: 100%;
 }
 .product-area {
-  background: rgba(0, 0, 0, 0) url("img/bg-img/bg-have-overlay.jpg");
+  /* background: rgba(0, 0, 0, 0) url("img/bg-img/bg-have-overlay.jpg"); */
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -873,10 +873,6 @@ a.min1:hover {
   transition: opacity 0.24s ease-in-out 0s;
   visibility: visible;
   text-transform: uppercase;
-}
-.pro-text::after {
-  background: rgba(0, 0, 0, 0) url("assets/images/underline-style-1.png")
-    no-repeat scroll 0 0;
 }
 .product-area .tb-product-item-inner .onsale,
 .product-tab-area .tb-product-item-inner .onsale,
@@ -1253,8 +1249,8 @@ a.min1:hover {
 }
 .product-tab-area .vc_tta-tab .active::after,
 .design-area .vc_tta-tab .active::after {
-  background: rgba(0, 0, 0, 0) url("img/icon-img/underline-style-2.png")
-    no-repeat scroll 0 0;
+  /* background: rgba(0, 0, 0, 0) url("img/icon-img/underline-style-2.png")
+    no-repeat scroll 0 0; */
   content: "";
   height: 100%;
   left: 50%;
@@ -1358,8 +1354,8 @@ a.min1:hover {
 
 .lastest-area .lastest-from::after,
 .design-area .lastest-from::after {
-  background: rgba(0, 0, 0, 0) url("img/icon-img/underline-style-2.png")
-    no-repeat scroll 0 0;
+  /* background: rgba(0, 0, 0, 0) url("img/icon-img/underline-style-2.png")
+    no-repeat scroll 0 0; */
   content: "";
   height: 100%;
   left: 50%;
@@ -1776,7 +1772,7 @@ address {
   top: 38%;
 }
 .client-area {
-  background-image: url("img/bg-img/bg.jpg");
+  /* background-image: url("img/bg-img/bg.jpg"); */
   background-attachment: fixed !important;
   background-size: cover !important;
 }
@@ -1858,7 +1854,7 @@ address {
 }
 .money-area {
   background-attachment: fixed !important;
-  background-image: url("img/bg-img/bg1.jpg");
+  /* background-image: url("img/bg-img/bg1.jpg"); */
   background-position: center 100px !important;
   background-size: cover !important;
 }
@@ -2192,7 +2188,7 @@ address {
 }
 .home-5.money-area {
   background-attachment: fixed !important;
-  background-image: url("img/bg-img/05_Homepage.jpg");
+  /* background-image: url("img/bg-img/05_Homepage.jpg"); */
   background-position: center 120px !important;
   background-size: cover !important;
 }
@@ -2273,7 +2269,7 @@ address {
 /*--------------------- 8. contact--------------------*/
 .contact-img-area {
   background-color: transparent;
-  background-image: url("img/bg-img/bg-pagetitle.jpg");
+  /* background-image: url("/src/img/bg-img/bg-pagetitle.jpg"); */
   background-position: center top;
   background-repeat: no-repeat;
   padding: 200px 0 100px;
