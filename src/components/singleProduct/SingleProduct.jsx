@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ReactImageMagnify from "react-image-magnify";
+// import ReactImageMagnify from "react-image-magnify";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -68,7 +68,7 @@ export default function SingleProduct() {
                     <div className="tab-content">
                       <div id="image1" className="tab-pane fade show active">
                         <div className="s_big">
-                          <ReactImageMagnify
+                          {/* <ReactImageMagnify
                             {...{
                               smallImage: {
                                 alt: "Wristwatch by Ted Baker London",
@@ -81,7 +81,7 @@ export default function SingleProduct() {
                                 height: 500,
                               },
                             }}
-                          />
+                          /> */}
                           {/* <a href="img/product/t1.jpg" className="demo4">
                             <img src="/src/img/product/8.jpg" alt="" />
                           </a> */}
