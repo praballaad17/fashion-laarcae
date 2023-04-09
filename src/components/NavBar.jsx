@@ -122,20 +122,7 @@ export default function NavBar() {
                                 </li>
                               </ul>
                             </li>
-                            <li>
-                              <a href="#">Jewelry</a>
-                              <ul className="main-menu3">
-                                <li>
-                                  <a>Necklaces</a>
-                                </li>
-                                <li>
-                                  <a>Earrings</a>
-                                </li>
-                                <li>
-                                  <a>Rings</a>
-                                </li>
-                              </ul>
-                            </li>
+
                             <li>
                               <a href="#">Shoes</a>
                               <ul className="main-menu3">
@@ -255,9 +242,6 @@ export default function NavBar() {
                               </a>
                             </li>
                           </ul>
-                        </li>
-                        <li>
-                          <a href="shop.html">Jewelry</a>
                         </li>
                         <li>
                           <a href="#">Pages</a>
@@ -408,9 +392,6 @@ export default function NavBar() {
                           </div>
                         </li>
                         <li>
-                          <a href="shop.html">Jewelry</a>
-                        </li>
-                        <li>
                           <Link className="fast" to={ROUTES.SHOP}>
                             Shop
                           </Link>
@@ -419,7 +400,7 @@ export default function NavBar() {
                           <Link to={ROUTES.WISHLIST}>WishList</Link>
                         </li>
                         <li>
-                          <a href="blog.html">Blog</a>
+                          <Link to={ROUTES.DASHBOARD}>Blog</Link>
                         </li>
                         <li>
                           <Link to={ROUTES.CONTACT}>Contact</Link>

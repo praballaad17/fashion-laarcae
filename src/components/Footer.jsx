@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../constant/routes";
 
 export default function Footer() {
   return (
@@ -187,7 +189,7 @@ export default function Footer() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="footer-address">
                 <address>
-                  Copyright ©<a href="#">HasThemes.</a>
+                  Copyright ©<Link to={ROUTES.DASHBOARD}>Fashion La'Arcae</Link>
                   All Rights Reserved
                 </address>
               </div>

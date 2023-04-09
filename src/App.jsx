@@ -66,13 +66,14 @@ function App() {
                 {/* <Route path="*" element={<NotFound />} /> */}
               </Routes>
             </Suspense>
+
+            {quickTop && (
+              <div className="quick-up" onClick={handleScrollToTop}>
+                <FontAwesomeIcon icon={faAngleDoubleUp} />
+              </div>
+            )}
+            <Footer />
           </Router>
-          {quickTop && (
-            <div className="quick-up" onClick={handleScrollToTop}>
-              <FontAwesomeIcon icon={faAngleDoubleUp} />
-            </div>
-          )}
-          <Footer />
         </UserProvider>
       </ToastProvider>
     </div>
