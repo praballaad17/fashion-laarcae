@@ -882,7 +882,8 @@ a.min1:hover {
 .product-tab-area .tb-product-item-inner .onsale,
 .design-area .tb-product-item-inner .onsale,
 .shop-area .tb-product-item-inner .onsale,
-.single-pro-area7 .tb-product-item-inner .onsale {
+.single-pro-area7 .tb-product-item-inner .onsale,
+.tb-product-item-inner .onsale {
   background: #fff none repeat scroll 0 0;
   border: medium none;
   border-radius: 50%;
@@ -1009,7 +1010,8 @@ a.min1:hover {
 .product-tab-area .last-cart a.las3,
 .design-area .last-cart a.las3,
 .shop-area .last-cart a.las3,
-.single-pro-area7 .last-cart a.las3 {
+.single-pro-area7 .last-cart a.las3,
+.last-cart a.las3 {
   line-height: 39px;
   color: #757575;
   background: #ffffff none repeat scroll 0 0;
@@ -1027,7 +1029,8 @@ a.min1:hover {
   vertical-align: middle;
   width: 0;
 }
-.single-pro-area7 .last-cart a.las3:hover {
+.single-pro-area7 .last-cart a.las3:hover,
+.tb-product-item-inner .last-cart a.las3:hover {
   background: #ce9634 none repeat scroll 0 0;
   color: #ffffff;
 }
@@ -1036,12 +1039,14 @@ a.min1:hover {
   color: #ffffff;
 }
 .product-tab-area .last-cart a.las3.las7,
-.design-area .last-cart a.las3.las7 {
+.design-area .last-cart a.las3.las7,
+.tb-product-item-inner .last-cart a.las3,
+.last-cart a.las7 {
   margin-left: 8px;
 }
 .tb-product-item-inner.tb2.pct-last:hover .last-cart a.las3 {
   opacity: 1;
-  width: 35px;
+  width: 34px;
 }
 .last-cart.l-mrgn {
   margin-top: 10px;
@@ -1608,7 +1613,8 @@ address {
   text-decoration: none;
 }
 .product-tab-area .tb-product-item-inner .onsale.two,
-.design-area .tb-product-item-inner .onsale.two {
+.design-area .tb-product-item-inner .onsale.two,
+.onsale.two {
   background: #2b2b2b none repeat scroll 0 0;
   color: #fff;
 }
@@ -1628,7 +1634,7 @@ address {
   font-size: 22px;
 }
 .quick-up:hover {
-  background-color: #e2ca12;
+  background-color: #ce9634;
 }
 /*--------------------- 3. index-2--------------------*/
 .header-area.home-2 {
@@ -2410,7 +2416,7 @@ textarea.form-control {
 .di-na {
   margin-bottom: 15px;
 }
-.last-cart-con input[type="submit"] {
+.last-cart-con button {
   background-color: transparent;
   border: 1px solid #c5c5c5;
   border-radius: 30px;
@@ -2426,7 +2432,7 @@ textarea.form-control {
   transition: all 0.4s ease 0s;
   font-family: Oswald;
 }
-.last-cart-con input[type="submit"]:hover {
+.last-cart-con button:hover {
   background-color: #ce9634;
   border-color: #ce9634;
   color: #fff;
@@ -3265,6 +3271,11 @@ a.o-back-to:hover {
   overflow: hidden;
   padding: 40px;
 }
+.dropdown_menu_style {
+  /* animation: growDown 300ms ease-in-out forwards; */
+  /* transform-origin: top center; */
+  transition: height 2s;
+}
 .faq-accordion .panel-default > .panel-heading {
   background: none repeat scroll 0 0 #323a45;
   border-left: 0 none;
@@ -3534,15 +3545,6 @@ textarea.input-text:focus,
 .checkout-coupon.top.log.a-an > input:focus {
   border-color: #ce9634;
 }
-.coupon-accordion h3::before {
-  color: #1e85be;
-  content: "ï„”";
-  display: inline-block;
-  font-family: fontawesome;
-  left: 1.5em;
-  position: absolute;
-  top: 20px;
-}
 .coupon-accordion h3 {
   background-color: #f7f6f7;
   border-top: 3px solid #ce9634;
@@ -3721,7 +3723,7 @@ p.checkout-coupon input[type="submit"]:hover,
   margin-top: 5px;
 }
 .coupon-checkout-content2 {
-  display: none;
+  display: block;
   width: 100%;
 }
 .checkout-area .tab-content h3.checkbox9 {
@@ -4080,7 +4082,7 @@ p.lost_password a:hover {
   margin: 0;
   padding: 0;
 }
-.tb-info-login > ul > li::before {
+/* .tb-info-login > ul > li::before {
   color: #ce9634;
   content: "ï†";
   display: inline-block;
@@ -4088,7 +4090,7 @@ p.lost_password a:hover {
   font-size: 14px;
   margin-right: 10px;
   vertical-align: middle;
-}
+} */
 .tb-info-login > ul > li {
   color: #8b8b8b;
   font-size: 16px;
@@ -4551,8 +4553,9 @@ p.checkout-coupon.full input[type="submit"] {
   display: block;
   overflow: hidden;
 }
-.text-sin ul li a.active {
+.text-sin ul li button[aria-selected="true"] {
   background: #ce9634 none repeat scroll 0 0 !important;
+  color: #fff !important;
 }
 .text-sin ul li a.active {
   color: #fff !important;
@@ -4562,7 +4565,7 @@ p.checkout-coupon.full input[type="submit"] {
   float: left;
   overflow: hidden;
 }
-.text-sin ul li a {
+.text-sin ul li button {
   display: inline-block;
   font-weight: 700;
   padding: 0.5em 14px;

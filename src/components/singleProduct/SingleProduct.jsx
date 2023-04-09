@@ -1,16 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ReactImageMagnify from "react-image-magnify";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faRetweet } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faRetweet, faStar } from "@fortawesome/free-solid-svg-icons";
 
-export default function SignleProduct() {
+import "./jquery.snipe.min.js";
+import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
+import { useUser } from "../../context/userContext.jsx";
+import { useToast } from "../../context/toastContext.jsx";
+
+export default function SingleProduct() {
   let { productId } = useParams();
   const [product, setProduct] = useState();
   const [qnt, setQnt] = useState(0);
+  const [starSelected, setStarSelected] = useState(0);
+  const { addToCart } = useUser();
+  const { addToast } = useToast();
+  const [review, setReview] = useState({
+    name: "",
+    email: "",
+    content: "",
+  });
 
   useEffect(() => {
     const getProduct = async () => {
@@ -24,6 +40,7 @@ export default function SignleProduct() {
 
     getProduct();
   }, []);
+
   return (
     <div>
       <section className="contact-img-area">
@@ -51,9 +68,23 @@ export default function SignleProduct() {
                     <div className="tab-content">
                       <div id="image1" className="tab-pane fade show active">
                         <div className="s_big">
-                          <a href="img/product/t1.jpg" className="demo4">
-                            <img src={product?.img} alt="" />
-                          </a>
+                          <ReactImageMagnify
+                            {...{
+                              smallImage: {
+                                alt: "Wristwatch by Ted Baker London",
+                                isFluidWidth: true,
+                                src: "/src/img/product/t1.jpg",
+                              },
+                              largeImage: {
+                                src: "/src/img/product/t1.jpg",
+                                width: 500,
+                                height: 500,
+                              },
+                            }}
+                          />
+                          {/* <a href="img/product/t1.jpg" className="demo4">
+                            <img src="/src/img/product/8.jpg" alt="" />
+                          </a> */}
                         </div>
                       </div>
                       <div id="image2" className="tab-pane fade">
@@ -187,7 +218,10 @@ export default function SignleProduct() {
                       </div>
                       <div className="add-two-single">
                         <div className="last-cart l-mrgn ns">
-                          <a className="las4" href="#">
+                          <a
+                            className="las4"
+                            onClick={() => addToCart(product, qnt)}
+                          >
                             Add To Cart
                           </a>
                         </div>
@@ -195,7 +229,7 @@ export default function SignleProduct() {
                           <a href="#">
                             <i className="fa fa-eye"></i>
                           </a>
-                          <a href="#">
+                          <a onClick={() => addToWishList(product)}>
                             <FontAwesomeIcon icon={faHeart} />
                           </a>
                           <a href="#">
@@ -211,166 +245,194 @@ export default function SignleProduct() {
                 </div>
               </div>
               <div className="text-sin">
-                {/* <!-- Nav tabs --> */}
-                <ul className="nav" role="tablist">
-                  <li>
-                    <a className="active" href="#home" data-bs-toggle="tab">
-                      Description
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#profile" data-bs-toggle="tab">
-                      Additional Information
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#messages" data-bs-toggle="tab">
-                      Reviews (0)
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#tag" data-bs-toggle="tab">
-                      {" "}
-                      TAGS
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#video" data-bs-toggle="tab">
-                      {" "}
-                      Video
-                    </a>
-                  </li>
-                </ul>
-                {/* <!-- Tab panes --> */}
-                <div className="tab-content">
-                  <div className="tab-pane active sin-ha" id="home">
-                    <h2>Product Description</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                      sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                      magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                      quis nostrud exerci tation ullamcorper suscipit lobortis
-                      nisl ut aliquip ex ea commodo consequat.
-                    </p>
-                  </div>
-                  <div className="tab-pane sin-ha" id="profile">
-                    <h2>Additional Information</h2>
-                    <table className="shop_attributes">
-                      <tbody>
-                        <tr className="">
-                          <th>Color</th>
-                          <td>
-                            <p>Black, Orange</p>
-                          </td>
-                        </tr>
-                        <tr className="alt">
-                          <th>Brand</th>
-                          <td>
-                            <p>Nike, Religion, Diesel, Monki</p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="tab-pane sin-ha" id="messages">
-                    <h2>Reviews</h2>
-                    <p className="woocommerce-nore">
-                      There are no reviews yet.
-                    </p>
-                    <h2>Be the first to review “Glasses”</h2>
-                    <form action="#">
-                      <div className="sin-form2">
-                        <p className="woocommerce-nore2">Your Rating</p>
-                        <span>
-                          <a href="#">
-                            <i className="fa fa-star-o"></i>
-                          </a>
-                          <a href="#">
-                            <i className="fa fa-star-o"></i>
-                          </a>
-                          <a href="#">
-                            <i className="fa fa-star-o"></i>
-                          </a>
-                          <a href="#">
-                            <i className="fa fa-star-o"></i>
-                          </a>
-                          <a href="#">
-                            <i className="fa fa-star-o"></i>
-                          </a>
-                        </span>
-                      </div>
-                      <div className="row">
-                        <div className="col-md-12">
-                          <label className="l-contact">
-                            Your Review
-                            <em>*</em>
-                          </label>
-                          <textarea
-                            className="form-control"
-                            name="message"
-                            required=""
-                          ></textarea>
+                <Tabs
+                  defaultActiveKey="Description"
+                  id="uncontrolled-tab-example"
+                  // className="mb-3"
+                >
+                  <Tab eventKey="Description" title="Description">
+                    <div className="tab-pane active sin-ha" id="Description">
+                      <h2>Product Description</h2>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna aliquam erat volutpat. Ut wisi enim ad
+                        minim veniam, quis nostrud exerci tation ullamcorper
+                        suscipit lobortis nisl ut aliquip ex ea commodo
+                        consequat.
+                      </p>
+                    </div>
+                  </Tab>
+                  <Tab
+                    eventKey="AdditionalInformation"
+                    title="Additional Information"
+                  >
+                    <div className="tab-pane sin-ha" id="AdditionalInformation">
+                      <h2>Additional Information</h2>
+                      <table className="shop_attributes">
+                        <tbody>
+                          <tr className="">
+                            <th>Color</th>
+                            <td>
+                              <p>Black, Orange</p>
+                            </td>
+                          </tr>
+                          <tr className="alt">
+                            <th>Brand</th>
+                            <td>
+                              <p>Nike, Religion, Diesel, Monki</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </Tab>
+                  <Tab eventKey="Reviews" title="Reviews">
+                    <div className="tab-pane sin-ha" id="messages">
+                      <h2>Reviews</h2>
+                      <p className="woocommerce-nore">
+                        There are no reviews yet.
+                      </p>
+                      <h2>Be the first to review “Glasses”</h2>
+                      <form>
+                        <div className="sin-form2">
+                          <p className="woocommerce-nore2">Your Rating</p>
+                          <span>
+                            <a onClick={() => setStarSelected(1)}>
+                              <FontAwesomeIcon
+                                icon={
+                                  starSelected >= 1 ? faStar : faStarRegular
+                                }
+                              />
+                            </a>
+                            <a onClick={() => setStarSelected(2)}>
+                              <FontAwesomeIcon
+                                icon={
+                                  starSelected >= 2 ? faStar : faStarRegular
+                                }
+                              />
+                            </a>
+                            <a onClick={() => setStarSelected(3)}>
+                              <FontAwesomeIcon
+                                icon={
+                                  starSelected >= 3 ? faStar : faStarRegular
+                                }
+                              />
+                            </a>
+                            <a onClick={() => setStarSelected(4)}>
+                              <FontAwesomeIcon
+                                icon={
+                                  starSelected >= 4 ? faStar : faStarRegular
+                                }
+                              />
+                            </a>
+                            <a onClick={() => setStarSelected(5)}>
+                              <FontAwesomeIcon
+                                icon={
+                                  starSelected >= 5 ? faStar : faStarRegular
+                                }
+                              />
+                            </a>
+                          </span>
                         </div>
-                        <div className="col-md-12">
-                          <div className="di-na">
+                        <div className="row">
+                          <div className="col-md-12">
                             <label className="l-contact">
-                              Name
+                              Your Review
                               <em>*</em>
                             </label>
-                            <input
+                            <textarea
                               className="form-control"
-                              type="text"
-                              name="name"
+                              name="message"
                               required=""
-                            />
+                              onChange={(e) =>
+                                setReview({
+                                  ...review,
+                                  content: e.target.value,
+                                })
+                              }
+                            ></textarea>
+                          </div>
+                          <div className="col-md-12">
+                            <div className="di-na">
+                              <label className="l-contact">
+                                Name
+                                <em>*</em>
+                              </label>
+                              <input
+                                className="form-control"
+                                type="text"
+                                name="name"
+                                required=""
+                                onChange={(e) =>
+                                  setReview({ ...review, name: e.target.value })
+                                }
+                              />
+                            </div>
+                          </div>
+                          <div className="col-md-12">
+                            <div className="di-na">
+                              <label className="l-contact">
+                                Email
+                                <em>*</em>
+                              </label>
+                              <input
+                                className="form-control"
+                                type="email"
+                                name="name"
+                                required=""
+                                onChange={(e) =>
+                                  setReview({
+                                    ...review,
+                                    email: e.target.value,
+                                  })
+                                }
+                              />
+                            </div>
+                          </div>
+                          <div className="col-md-12">
+                            <div className="last-cart-con s-icon2">
+                              <button
+                                className="wpcf7"
+                                // type="submit"
+                                value="Submit"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  addToast("Thanks For Review!");
+                                }}
+                              >
+                                Submit
+                              </button>
+                            </div>
                           </div>
                         </div>
-                        <div className="col-md-12">
-                          <div className="di-na">
-                            <label className="l-contact">
-                              Email
-                              <em>*</em>
-                            </label>
-                            <input
-                              className="form-control"
-                              type="email"
-                              name="name"
-                              required=""
-                            />
-                          </div>
+                      </form>
+                    </div>
+                  </Tab>
+                  <Tab eventKey="TAGS" title="TAGS">
+                    <div className="tab-pane" id="tag">
+                      <span className="tagged_as">
+                        Tag:
+                        <a rel="tag" href="#">
+                          Featured
+                        </a>
+                      </span>
+                    </div>
+                  </Tab>
+                  <Tab eventKey="Video" title="Video">
+                    <div className="tab-pane" id="video">
+                      <div className="post-format-area">
+                        <div className="blog_video ratio ratio-16x9">
+                          <iframe
+                            className="embed-responsive-item"
+                            src="https://www.youtube.com/embed/Zv11L-ZfrSg"
+                            allowfullscreen
+                          ></iframe>
                         </div>
-                        <div className="col-md-12">
-                          <div className="last-cart-con s-icon2">
-                            <input
-                              className="wpcf7"
-                              type="submit"
-                              value="Submit"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div className="tab-pane" id="tag">
-                    <span className="tagged_as">
-                      Tag:
-                      <a rel="tag" href="#">
-                        Featured
-                      </a>
-                    </span>
-                  </div>
-                  <div className="tab-pane" id="video">
-                    <div className="post-format-area">
-                      <div className="blog_video ratio ratio-16x9">
-                        <iframe
-                          className="embed-responsive-item"
-                          src="https://www.youtube.com/embed/87Fx45Bwy-E?list=PLFii9RzqhPhGIXp9ouuse2pVqIOTI0VrM"
-                          allowfullscreen
-                        ></iframe>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </Tab>
+                </Tabs>
               </div>
             </div>
             <div className="col-xl-3 col-lg-3 col-md-12 col-12">

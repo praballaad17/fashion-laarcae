@@ -1,9 +1,11 @@
 export const DASHBOARD = "/";
 export const LOGIN = "/login";
-export const SIGN_UP = "/signup";
+export const CONTACT = "/contact";
 export const SIGNLEPRODUCT = "/product/:productId";
 export const NOT_FOUND = "/not-found";
 export const SHOP = "/shop";
 export const CHECKOUT = "/checkout";
+export const WISHLIST = "/wishlist";
 export const CART = "/cart";
+export const MYACCOUNT = "/my-account";
 export const ASSIGNREQUEST = "/assign-request/:requestId";

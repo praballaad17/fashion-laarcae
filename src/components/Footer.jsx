@@ -2,18 +2,18 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer class="footer-area">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="first-footer rspn">
-                <h3 class="wg-title">Contact Us</h3>
-                <div class="textwidget">
+    <footer className="footer-area">
+      <div className="footer-top">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+              <div className="first-footer rspn">
+                <h3 className="wg-title">Contact Us</h3>
+                <div className="textwidget">
                   <ul>
                     <li>
                       <a href="#">
-                        <i class="fa fa-map-marker"></i>
+                        <i className="fa fa-map-marker"></i>
                         <span>
                           NORAURE London Oxford Street 012 United Kingdom.
                         </span>
@@ -21,7 +21,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-envelope"></i>
+                        <i className="fa fa-envelope"></i>
                         <span>
                           emailnoraure@gmail.com emailsupport@gmail.com
                         </span>
@@ -29,7 +29,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-phone"></i>
+                        <i className="fa fa-phone"></i>
                         <span>
                           (+92) 3456 7890
                           <br />
@@ -41,11 +41,11 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-3 col-12">
-              <div class="first-footer rspn">
-                <h3 class="wg-title">Information</h3>
-                <div class="textwidget">
-                  <ul class="f-none">
+            <div className="col-xl-2 col-lg-2 col-md-4 col-sm-3 col-12">
+              <div className="first-footer rspn">
+                <h3 className="wg-title">Information</h3>
+                <div className="textwidget">
+                  <ul className="f-none">
                     <li>
                       <a href="#">My account</a>
                     </li>
@@ -68,11 +68,11 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-3 col-12">
-              <div class="first-footer rspn">
-                <h3 class="wg-title">Our Offers</h3>
-                <div class="textwidget">
-                  <ul class="f-none">
+            <div className="col-xl-2 col-lg-2 col-md-4 col-sm-3 col-12">
+              <div className="first-footer rspn">
+                <h3 className="wg-title">Our Offers</h3>
+                <div className="textwidget">
+                  <ul className="f-none">
                     <li>
                       <a href="#">New collection</a>
                     </li>
@@ -95,11 +95,11 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
-              <div class="first-footer res-mrg-top-md rspn">
-                <h3 class="wg-title">Our Policy</h3>
-                <div class="textwidget">
-                  <ul class="f-none">
+            <div className="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+              <div className="first-footer res-mrg-top-md rspn">
+                <h3 className="wg-title">Our Policy</h3>
+                <div className="textwidget">
+                  <ul className="f-none">
                     <li>
                       <a href="#">Help & Contact</a>
                     </li>
@@ -122,14 +122,14 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="last-footer res-mrg-top-md">
-                <h3 class="wg-title">Get Newsletters</h3>
-                <div class="newsletter">
+            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+              <div className="last-footer res-mrg-top-md">
+                <h3 className="wg-title">Get Newsletters</h3>
+                <div className="newsletter">
                   <form action="#">
                     <p>
                       <input
-                        class="newsletter-email"
+                        className="newsletter-email"
                         type="email"
                         placeholder="Email"
                         required=""
@@ -137,40 +137,40 @@ export default function Footer() {
                     </p>
                     <p>
                       <input
-                        class="newsletter-submit"
+                        className="newsletter-submit"
                         type="submit"
                         value="Subscribe"
                       />
                     </p>
                   </form>
                 </div>
-                <div class="widget_text">
-                  <h3 class="wg-title">Connect Us</h3>
-                  <div class="textwid">
-                    <ul class="socials">
+                <div className="widget_text">
+                  <h3 className="wg-title">Connect Us</h3>
+                  <div className="textwid">
+                    <ul className="socials">
                       <li>
                         <a href="#">
-                          <i class="fa fa-facebook"></i>
+                          <i className="fa fa-facebook"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="fa fa-twitter"></i>
+                          <i className="fa fa-twitter"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="fa fa-linkedin"></i>
+                          <i className="fa fa-linkedin"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="fa fa-rss"></i>
+                          <i className="fa fa-rss"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="fa fa-dribbble"></i>
+                          <i className="fa fa-dribbble"></i>
                         </a>
                       </li>
                     </ul>
@@ -181,19 +181,19 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-12">
-              <div class="footer-address">
+      <div className="footer-bottom">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-12">
+              <div className="footer-address">
                 <address>
                   Copyright ©<a href="#">HasThemes.</a>
                   All Rights Reserved
                 </address>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-12">
-              <div class="foot-icon">
+            <div className="col-lg-6 col-md-6 col-12">
+              <div className="foot-icon">
                 <ul>
                   <li>
                     <a href="#">

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ProductModal from "../ProductModal";
+import { useUser } from "../../context/userContext";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faHeart, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import Container from "react-bootstrap/Container";
@@ -8,6 +11,7 @@ import Col from "react-bootstrap/Col";
 export default function Shop() {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState();
+  const { addToCart, addToWishList } = useUser();
 
   const products = [
     {
@@ -361,10 +365,13 @@ export default function Shop() {
                           </div>
                         </div>
                         <div className="last-cart l-mrgn">
-                          <a className="las3" href="#">
+                          <a
+                            className="las3"
+                            onClick={() => addToWishList(item)}
+                          >
                             <FontAwesomeIcon icon={faHeart} />
                           </a>
-                          <a className="las4" href="#">
+                          <a className="las4" onClick={() => addToCart(item)}>
                             Add To Cart
                           </a>
                           <a className="las3 las7" href="#">

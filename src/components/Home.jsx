@@ -2,22 +2,19 @@ import React, { useEffect, useState } from "react";
 import HeroSlider from "./common/HeroSlider";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowUp,
-  faEye,
-  faHeart,
-  faRetweet,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEye, faHeart, faRetweet } from "@fortawesome/free-solid-svg-icons";
 
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ProductModal from "./ProductModal";
+import { useUser } from "../context/userContext";
 
 export default function Home() {
   const [activeTab, setTab] = useState(2);
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState();
+  const { addToCart, addToWishList } = useUser();
 
   useEffect(() => {
     $(".features-curosel2").owlCarousel({
@@ -61,10 +58,10 @@ export default function Home() {
         price: "170",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 3,
+        img: "/src/img/product/3.jpg",
+        name: "Vintage Lambskin Shoe",
+        price: "180",
       },
       {
         id: 1,
@@ -87,10 +84,10 @@ export default function Home() {
         price: "170",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 3,
+        img: "/src/img/product/3.jpg",
+        name: "Vintage Lambskin Shoe",
+        price: "180",
       },
       {
         id: 1,
@@ -113,10 +110,10 @@ export default function Home() {
         price: "170",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 3,
+        img: "/src/img/product/3.jpg",
+        name: "Vintage Lambskin Shoe",
+        price: "180",
       },
       {
         id: 1,
@@ -145,7 +142,6 @@ export default function Home() {
     ],
   };
 
-  console.log(open);
   return (
     <div>
       <HeroSlider />
@@ -283,10 +279,16 @@ export default function Home() {
                                       </div>
                                     </div>
                                     <div className="last-cart l-mrgn">
-                                      <a className="las3" href="#">
+                                      <a
+                                        className="las3"
+                                        onClick={() => addToWishList(item)}
+                                      >
                                         <FontAwesomeIcon icon={faHeart} />
                                       </a>
-                                      <a className="las4" href="#">
+                                      <a
+                                        className="las4"
+                                        onClick={() => addToCart(item)}
+                                      >
                                         Add To Cart
                                       </a>
                                       <a className="las3 las7" href="#">
@@ -342,10 +344,16 @@ export default function Home() {
                                       </div>
                                     </div>
                                     <div className="last-cart l-mrgn">
-                                      <a className="las3" href="#">
+                                      <a
+                                        className="las3"
+                                        onClick={() => addToWishList(item)}
+                                      >
                                         <FontAwesomeIcon icon={faHeart} />
                                       </a>
-                                      <a className="las4" href="#">
+                                      <a
+                                        className="las4"
+                                        onClick={() => addToCart(item)}
+                                      >
                                         Add To Cart
                                       </a>
                                       <a className="las3 las7" href="#">
@@ -371,8 +379,11 @@ export default function Home() {
                           margin={20}
                         >
                           {navtab.three &&
-                            navtab.three.map((item) => (
-                              <div className="tb-product-item-inner tb2 pct-last">
+                            navtab.three.map((item, idx) => (
+                              <div
+                                className="tb-product-item-inner tb2 pct-last"
+                                key={idx}
+                              >
                                 <span className="onsale">Sale!</span>
                                 <img alt="" src={item.img} />
                                 <a
@@ -401,10 +412,16 @@ export default function Home() {
                                       </div>
                                     </div>
                                     <div className="last-cart l-mrgn">
-                                      <a className="las3" href="#">
+                                      <a
+                                        className="las3"
+                                        onClick={() => addToWishList(item)}
+                                      >
                                         <FontAwesomeIcon icon={faHeart} />
                                       </a>
-                                      <a className="las4" href="#">
+                                      <a
+                                        className="las4"
+                                        onClick={() => addToCart(item)}
+                                      >
                                         Add To Cart
                                       </a>
                                       <a className="las3 las7" href="#">

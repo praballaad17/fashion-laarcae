@@ -2,10 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "/logo/04_Homepage.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faCartShopping,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import * as ROUTES from "../constant/routes";
+import CartModal from "./shop/CartModal";
+import { useUser } from "../context/userContext";
+
 export default function NavBar() {
   const [isCart, setCart] = useState(false);
+  const { cartProducts } = useUser();
   useEffect(() => {
     var stickyTop = $(".header-menu").offset().top;
     $(window).on("scroll", function () {
@@ -31,18 +39,18 @@ export default function NavBar() {
               <div className="widget">
                 <ul>
                   <li>
-                    <a href="#">My Account</a>
+                    <Link to={ROUTES.MYACCOUNT}>My Account</Link>
                   </li>
                   <li>
-                    <a href="#">Wishlist</a>
+                    <Link to={ROUTES.WISHLIST}>Wishlist</Link>
                   </li>
                   <li>
-                    <a href="#">Check Out</a>
+                    <Link to={ROUTES.CHECKOUT}>Check Out</Link>
                   </li>
                   <li>
-                    <a className="tb-login" href="#">
+                    <Link className="tb-login" to={ROUTES.LOGIN}>
                       Login
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -55,9 +63,9 @@ export default function NavBar() {
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="home4-logo">
-                <a href="index.html">
+                <Link to={ROUTES.DASHBOARD}>
                   <img src={Logo} alt="" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -78,7 +86,7 @@ export default function NavBar() {
                     <nav id="dropdown">
                       <ul className="main-menu">
                         <li>
-                          <a href="index.html">Home</a>
+                          <Link to={ROUTES.DASHBOARD}>Home</Link>
                           <ul className="menu-up">
                             <li>
                               <a href="index-2.html">Homepage 02</a>
@@ -286,22 +294,13 @@ export default function NavBar() {
                     <nav>
                       <ul>
                         <li>
-                          <a className="fast active" href="index.html">
-                            home <i className="fa fa-angle-down"></i>
-                          </a>
-                          <div className="rayed ru">
-                            <div className="tas menu-last2">
-                              <a href="index-2.html">Homepage 02</a>
-                              <a href="index-3.html">Homepage 03</a>
-                              <a href="index-4.html">Homepage 04</a>
-                              <a href="index-5.html">Homepage 05</a>
-                              <a href="index-6.html">Homepage 06</a>
-                            </div>
-                          </div>
+                          <Link className="fast active" to={ROUTES.DASHBOARD}>
+                            home
+                          </Link>
                         </li>
                         <li>
                           <a href="shop.html">
-                            Women <i className="fa fa-angle-down"></i>
+                            Women <FontAwesomeIcon icon={faAngleDown} />
                           </a>
                           <div className="mega-menu menu-minus">
                             <div className="tas1">
@@ -341,7 +340,7 @@ export default function NavBar() {
                         </li>
                         <li>
                           <a href="shop.html">
-                            Men <i className="fa fa-angle-down"></i>
+                            Men <FontAwesomeIcon icon={faAngleDown} />
                           </a>
                           <div className="mega-menu menu-minus">
                             <div className="tas1 tas3">
@@ -412,34 +411,18 @@ export default function NavBar() {
                           <a href="shop.html">Jewelry</a>
                         </li>
                         <li>
-                          <a className="fast" href="index.html">
-                            Pages <i className="fa fa-angle-down"></i>
-                          </a>
-                          <div className="rayed ru">
-                            <div className="tas menu-last2">
-                              <a href="blog.html">Blog</a>
-                              <a href="blog-details.html">Blog Details</a>
-                              <a href="checkout.html">checkout</a>
-                              <a href="contact.html">Contacts</a>
-                              <a href="login.html">Login</a>
-                              <a href="my-account.html">My Account</a>
-                              <a href="shop.html">shop</a>
-                              <a href="shop-list.html">shop List</a>
-                              <a href="single-product.html">single-product</a>
-                              <a href="shopping-cart.html">shopping-cart</a>
-                              <a href="wishlist.html">wishlist</a>
-                              <a href="coming-soon.html">coming soon</a>
-                            </div>
-                          </div>
+                          <Link className="fast" to={ROUTES.SHOP}>
+                            Shop
+                          </Link>
                         </li>
                         <li>
-                          <a href="blog.html">Watches</a>
+                          <Link to={ROUTES.WISHLIST}>WishList</Link>
                         </li>
                         <li>
                           <a href="blog.html">Blog</a>
                         </li>
                         <li>
-                          <a href="contact.html">Contact</a>
+                          <Link to={ROUTES.CONTACT}>Contact</Link>
                         </li>
                       </ul>
                     </nav>
@@ -448,7 +431,7 @@ export default function NavBar() {
                     <div className="tb-menu-sidebar floatleft">
                       <div className="search-item">
                         <a className="icon_search" href="#">
-                          <i className="fa fa-search search-icon"></i>
+                          <FontAwesomeIcon icon={faSearch} />
                         </a>
                         <div className="widget_searchform_content">
                           <form action="#">
@@ -469,75 +452,12 @@ export default function NavBar() {
                           <div className="top-shop-title">
                             <a onClick={() => setCart((prev) => !prev)}>
                               <FontAwesomeIcon icon={faCartShopping} />
-                              <span className="count co1">2</span>
+                              <span className="count co1">
+                                {cartProducts.length ? cartProducts.length : 0}
+                              </span>
                             </a>
                           </div>
-                          {isCart && (
-                            <div className="wish-cart margin active">
-                              <div className="wish-item">
-                                <div className="cat">
-                                  <a className="image" href="#">
-                                    <img src="img/product/c1.jpg" alt="" />
-                                  </a>
-                                  <div className="cat_two">
-                                    <p>
-                                      <a href="#">vintage-lambskin-shoe</a>
-                                    </p>
-                                    <p>
-                                      <span className="agn">1 </span>x
-                                      <span>$199.00</span>
-                                    </p>
-                                  </div>
-                                  <div className="cat_icon">
-                                    <a className="remove" href="#">
-                                      ×
-                                    </a>
-                                  </div>
-                                </div>
-                                <div className="cat">
-                                  <a className="image" href="#">
-                                    <img src="img/product/c2.jpg" alt="" />
-                                  </a>
-                                  <div className="cat_two">
-                                    <p>
-                                      <a href="#">luxury-leather-bag</a>
-                                    </p>
-                                    <p>
-                                      <span className="agn">1</span> x
-                                      <span>$99.00</span>
-                                    </p>
-                                  </div>
-                                  <div className="cat_icon">
-                                    <a className="remove" href="#">
-                                      ×
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="wish-item">
-                                <div className="cat_bottom">
-                                  <p className="total">
-                                    <strong>Subtotal:</strong>
-                                    <span className="amount">$298.00</span>
-                                  </p>
-                                  <p className="buttons">
-                                    <Link
-                                      className="button wc-forward"
-                                      to={ROUTES.CART}
-                                    >
-                                      View Cart
-                                    </Link>
-                                    <Link
-                                      className="button checkout wc-forward"
-                                      to={ROUTES.CHECKOUT}
-                                    >
-                                      Checkout
-                                    </Link>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          )}
+                          {isCart && <CartModal />}
                         </div>
                       </div>
                     </div>
