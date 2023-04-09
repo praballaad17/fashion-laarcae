@@ -7,6 +7,8 @@ import ToastItem from "./Toast";
 export default function ToastBox({ content, error = false }) {
   const { toastList } = useToast();
 
+  console.log(toastList.length);
+
   return (
     <div
       aria-live="polite"
@@ -14,7 +16,7 @@ export default function ToastBox({ content, error = false }) {
       className={`position-fixed top-0 end-0 ${
         toastList.length ? "w-25" : "w-0"
       }`}
-      style={{ minHeight: "240px", zIndex: 1000 }}
+      style={{ zIndex: 1000 }}
     >
       <ToastContainer position="top-end" className="p-3">
         {toastList && toastList.length ? (

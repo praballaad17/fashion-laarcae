@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import img1 from "/slider/bg_slider1.jpg";
-import img2 from "/slider/bg_slider22.jpg";
+import img1 from "/img/slider/bg_slider1.jpg";
+import img2 from "/img/slider/bg_slider22.jpg";
 import $ from "jquery";
 import "./jquery.nivo.slider";
 import "./nivo-slider.css";

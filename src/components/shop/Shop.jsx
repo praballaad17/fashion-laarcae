@@ -8,95 +8,67 @@ import { faEye, faHeart, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useToast } from "../../context/toastContext";
 export default function Shop() {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState();
   const { addToCart, addToWishList } = useUser();
+  const { addToast } = useToast();
 
   const products = [
     {
       id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
+      img: "/img/product/1.jpg",
+      name: "Blue Bag",
+      price: "120",
+    },
+    {
+      id: 2,
+      img: "/img/product/2.jpg",
+      name: "Black Leather Shoes",
+      price: "300",
+    },
+    {
+      id: 3,
+      img: "/img/product/3.jpg",
+      name: "Brown Leather Shoes",
+      price: "220",
+    },
+    {
+      id: 4,
+      img: "/img/product/4.jpg",
+      name: "Brown Bag",
+      price: "210",
+    },
+    {
+      id: 5,
+      img: "/img/product/5.jpg",
+      name: "Silver Leather Bag",
+      price: "200",
+    },
+    {
+      id: 6,
+      img: "/img/product/6.jpg",
+      name: "Googles Black",
+      price: "190",
+    },
+    {
+      id: 7,
+      img: "/img/product/7.jpg",
+      name: "White Leather Bag",
+      price: "180",
+    },
+    {
+      id: 8,
+      img: "/img/product/8.jpg",
+      name: "Golden Leather Bag",
       price: "170",
     },
     {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
-    },
-    {
-      id: 1,
-      img: "/src/img/product/8.jpg",
-      name: "Leather Bag",
-      price: "170",
+      id: 9,
+      img: "/img/product/9.jpg",
+      name: "Glasses",
+      price: "100",
     },
   ];
 
@@ -367,11 +339,20 @@ export default function Shop() {
                         <div className="last-cart l-mrgn">
                           <a
                             className="las3"
-                            onClick={() => addToWishList(item)}
+                            onClick={() => {
+                              addToast("Product added to WishList!");
+                              addToWishList(item);
+                            }}
                           >
                             <FontAwesomeIcon icon={faHeart} />
                           </a>
-                          <a className="las4" onClick={() => addToCart(item)}>
+                          <a
+                            className="las4"
+                            onClick={() => {
+                              addToast("Product added to Cart!");
+                              addToCart(item);
+                            }}
+                          >
                             Add To Cart
                           </a>
                           <a className="las3 las7" href="#">

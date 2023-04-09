@@ -55,91 +55,121 @@ export default function Home() {
     one: [
       {
         id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        img: "/img/product/1.jpg",
+        name: "Blue Bag",
+        price: "120",
+      },
+      {
+        id: 2,
+        img: "/img/product/2.jpg",
+        name: "Black Leather Shoes",
+        price: "300",
       },
       {
         id: 3,
-        img: "/src/img/product/3.jpg",
-        name: "Vintage Lambskin Shoe",
-        price: "180",
+        img: "/img/product/3.jpg",
+        name: "Brown Leather Shoes",
+        price: "220",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 4,
+        img: "/img/product/4.jpg",
+        name: "Brown Bag",
+        price: "210",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 5,
+        img: "/img/product/5.jpg",
+        name: "Silver Leather Bag",
+        price: "200",
       },
     ],
     two: [
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 4,
+        img: "/img/product/4.jpg",
+        name: "Brown Bag",
+        price: "210",
       },
       {
-        id: 3,
-        img: "/src/img/product/3.jpg",
-        name: "Vintage Lambskin Shoe",
+        id: 5,
+        img: "/img/product/5.jpg",
+        name: "Silver Leather Bag",
+        price: "200",
+      },
+      {
+        id: 6,
+        img: "/img/product/6.jpg",
+        name: "Googles Black",
+        price: "190",
+      },
+      {
+        id: 7,
+        img: "/img/product/7.jpg",
+        name: "White Leather Bag",
         price: "180",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
+        id: 8,
+        img: "/img/product/8.jpg",
+        name: "Golden Leather Bag",
         price: "170",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 9,
+        img: "/img/product/9.jpg",
+        name: "Glasses",
+        price: "100",
       },
     ],
     three: [
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
-      },
-      {
-        id: 3,
-        img: "/src/img/product/3.jpg",
-        name: "Vintage Lambskin Shoe",
+        id: 7,
+        img: "/img/product/7.jpg",
+        name: "White Leather Bag",
         price: "180",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
+        id: 8,
+        img: "/img/product/8.jpg",
+        name: "Golden Leather Bag",
         price: "170",
       },
       {
         id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        img: "/img/product/1.jpg",
+        name: "Blue Bag",
+        price: "120",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 2,
+        img: "/img/product/2.jpg",
+        name: "Black Leather Shoes",
+        price: "300",
       },
       {
-        id: 1,
-        img: "/src/img/product/8.jpg",
-        name: "Leather Bag",
-        price: "170",
+        id: 3,
+        img: "/img/product/3.jpg",
+        name: "Brown Leather Shoes",
+        price: "220",
+      },
+      {
+        id: 4,
+        img: "/img/product/4.jpg",
+        name: "Brown Bag",
+        price: "210",
+      },
+      {
+        id: 5,
+        img: "/img/product/5.jpg",
+        name: "Silver Leather Bag",
+        price: "200",
+      },
+      {
+        id: 6,
+        img: "/img/product/6.jpg",
+        name: "Googles Black",
+        price: "190",
       },
     ],
   };
@@ -155,7 +185,7 @@ export default function Home() {
               <div className="col-lg-8 col-md-8 col-12">
                 <div className="tb-info-box">
                   <div className="tb-image">
-                    <img alt="" src="/src/img/banner/img-1.jpg" />
+                    <img alt="" src="/img/banner/img-1.jpg" />
                   </div>
                   <div className="tb-content">
                     <h5>NEW DESIGN</h5>
@@ -174,14 +204,14 @@ export default function Home() {
                     </h6>
                   </div>
                   <div className="tb-image tb-right">
-                    <img alt="" src="/src/img/banner/img-2.jpg" />
+                    <img alt="" src="/img/banner/img-2.jpg" />
                   </div>
                 </div>
               </div>
               <div className="col-lg-4 col-md-4 col-12">
                 <div className="ro-info-box-wrap tpl3 fs">
                   <div className="tb-image">
-                    <img alt="" src="/src/img/banner/img-3.jpg" />
+                    <img alt="" src="/img/banner/img-3.jpg" />
                   </div>
                   <div className="tb-content">
                     <div className="tb-content-inner">

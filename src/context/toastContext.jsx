@@ -27,6 +27,8 @@ export function ToastProvider({ children }) {
     setToastList(unfilter);
   };
 
+  console.log(toastList);
+
   const value = {
     toastList,
     addToast,
