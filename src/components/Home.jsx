@@ -9,12 +9,14 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ProductModal from "./ProductModal";
 import { useUser } from "../context/userContext";
+import { useToast } from "../context/toastContext";
 
 export default function Home() {
   const [activeTab, setTab] = useState(2);
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState();
   const { addToCart, addToWishList } = useUser();
+  const { addToast } = useToast();
 
   useEffect(() => {
     $(".features-curosel2").owlCarousel({
@@ -287,7 +289,10 @@ export default function Home() {
                                       </a>
                                       <a
                                         className="las4"
-                                        onClick={() => addToCart(item)}
+                                        onClick={() => {
+                                          addToast("Product is Added to Cart");
+                                          addToCart(item);
+                                        }}
                                       >
                                         Add To Cart
                                       </a>
@@ -352,7 +357,10 @@ export default function Home() {
                                       </a>
                                       <a
                                         className="las4"
-                                        onClick={() => addToCart(item)}
+                                        onClick={() => {
+                                          addToast("Product is Added to Cart");
+                                          addToCart(item);
+                                        }}
                                       >
                                         Add To Cart
                                       </a>
@@ -420,7 +428,10 @@ export default function Home() {
                                       </a>
                                       <a
                                         className="las4"
-                                        onClick={() => addToCart(item)}
+                                        onClick={() => {
+                                          addToast("Product is Added to Cart");
+                                          addToCart(item);
+                                        }}
                                       >
                                         Add To Cart
                                       </a>

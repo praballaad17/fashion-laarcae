@@ -38,8 +38,8 @@ function App() {
 
   return (
     <div className="App">
-      <UserProvider user={user}>
-        <ToastProvider>
+      <ToastProvider>
+        <UserProvider user={user}>
           <Router>
             <NavBar />
             <ToastBox />
@@ -73,8 +73,8 @@ function App() {
             </div>
           )}
           <Footer />
-        </ToastProvider>
-      </UserProvider>
+        </UserProvider>
+      </ToastProvider>
     </div>
   );
 }

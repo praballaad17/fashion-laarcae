@@ -5,6 +5,7 @@ import React, {
   createContext,
   useCallback,
 } from "react";
+import { useToast } from "./toastContext";
 
 const UserContext = createContext();
 
@@ -15,6 +16,7 @@ export function UserProvider({ user, children }) {
   const [cartProducts, setCartProduct] = useState([]);
   const [wishProducts, setWishProduct] = useState([]);
   const [total, setTotal] = useState(0);
+  const { addToast } = useToast();
 
   const addToCart = (product, qnt = 1) => {
     product = {
@@ -26,7 +28,11 @@ export function UserProvider({ user, children }) {
   };
 
   const addToWishList = (product) => {
-    setWishProduct((prev) => [...prev, product]);
+    if (product) {
+      setWishProduct((prev) => [...prev, product]);
+    } else {
+      addToast("Product is empty!", true);
+    }
   };
 
   const removeProductFromWishList = (productId) => {

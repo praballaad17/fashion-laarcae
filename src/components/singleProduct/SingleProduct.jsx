@@ -20,7 +20,7 @@ export default function SingleProduct() {
   const [product, setProduct] = useState();
   const [qnt, setQnt] = useState(0);
   const [starSelected, setStarSelected] = useState(0);
-  const { addToCart } = useUser();
+  const { addToCart, addToWishList } = useUser();
   const { addToast } = useToast();
   const [review, setReview] = useState({
     name: "",
@@ -220,7 +220,10 @@ export default function SingleProduct() {
                         <div className="last-cart l-mrgn ns">
                           <a
                             className="las4"
-                            onClick={() => addToCart(product, qnt)}
+                            onClick={() => {
+                              addToast("Product is Added to Cart!");
+                              addToCart(product, qnt);
+                            }}
                           >
                             Add To Cart
                           </a>
@@ -229,7 +232,12 @@ export default function SingleProduct() {
                           <a href="#">
                             <i className="fa fa-eye"></i>
                           </a>
-                          <a onClick={() => addToWishList(product)}>
+                          <a
+                            onClick={() => {
+                              addToast("Product is Added to WishList!");
+                              addToWishList(product);
+                            }}
+                          >
                             <FontAwesomeIcon icon={faHeart} />
                           </a>
                           <a href="#">
