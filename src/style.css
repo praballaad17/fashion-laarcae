@@ -1979,6 +1979,11 @@ address {
   padding-left: 150px;
 }
 /*--------------------- 5. index-4--------------------*/
+.top-bars {
+  display: none;
+  font-size: 18px;
+  padding-left: 20px;
+}
 .header-four {
   background: #ffffff none repeat scroll 0 0;
   padding: 60px 0 20px;
@@ -3603,12 +3608,12 @@ p.checkout-coupon input[type="submit"]:hover,
   background: #ce9634 none repeat scroll 0 0;
 }
 .checkout-area {
-  margin: 50px 0;
+  margin-top: 50px;
 }
 .checkout-area .nav .ano > a {
   position: relative;
 }
-.checkout-area .nav .ano > a {
+/* .checkout-area .nav .ano > a {
   background-color: #ffffff;
   border: 1px solid #aaaaaa;
   border-radius: 50%;
@@ -3675,17 +3680,17 @@ p.checkout-coupon input[type="submit"]:hover,
   top: 33px;
   width: 86%;
   z-index: -1;
-}
+} */
 .checkout-area .text {
   position: relative;
 }
-.checkout-area .nav-tabs > li {
+/* .checkout-area .nav-tabs > li {
   margin-right: 212px;
   display: inline-block;
 }
 .checkout-area .nav-tabs > li.la {
   margin-right: 0px;
-}
+} */
 .checkout-area .ano > span {
   margin-left: -21px;
   font-size: 18px;
@@ -3760,7 +3765,8 @@ p.checkout-coupon input[type="submit"]:hover,
   display: inline-block;
   min-width: 160px;
 }
-.checkout-area .all-payment {
+.checkout-area .all-payment,
+.all-payment {
   background: #ebe9eb none repeat scroll 0 0;
   border-radius: 5px;
 }
@@ -3809,7 +3815,8 @@ p.checkout-coupon input[type="submit"]:hover,
   margin: 0;
   display: block;
 }
-.checkout-area .all-payment .payment_box::before {
+.checkout-area .all-payment .payment_box::before,
+.all-payment .payment_box::before {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
@@ -4867,30 +4874,60 @@ p.woocommerce-nore2 {
   float: right;
   margin-top: 8px;
 }
-/* 19. QUICK VIEW == */
+/************************************************************************************
+************************************** mobile-menu *********************************
+*************************************************************************************/
 
 .mobile-menu {
   display: none;
+  color: black;
 }
 .mobile-menu {
   position: absolute;
   top: 96px;
   width: 100%;
+  height: 235px;
+  overflow-y: scroll;
+  background-color: white;
+  z-index: 1000;
 }
 .meanmenu-reveal {
   position: absolute;
   top: -67px !important;
 }
 
-nav#dropdown {
+/* nav#dropdown {
   display: none;
-}
+} */
 .mobile-menu .mean-nav ul.main-menu {
-  height: 215px;
   overflow-y: auto;
 }
+.drop-menu {
+  display: none;
+}
+.mobile-menu ul.main-menu li a {
+  color: black;
+  font-weight: bold;
+}
+.mobile-menu ul.main-menu li {
+  padding: 7px 10px;
+  color: black;
+  border-top: 1px solid grey;
+  text-align: left;
+}
+.mobile-menu ul.main-menu li.menu-drop .menu-drop-title {
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+}
 
-/* 20. Coming soon == */
+/*****************************************************************************************
+************************************* 19. QUICK VIEW == **********************************
+*****************************************************************************************/
+
+/********************************************************************************************
+********************************** 20. Coming soon == ****************************************
+**********************************************************************************************/
 .comming-soon-wrap,
 .subscribe-area {
   position: relative;

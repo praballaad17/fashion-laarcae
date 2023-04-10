@@ -18,39 +18,6 @@ export default function Home() {
   const { addToCart, addToWishList } = useUser();
   const { addToast } = useToast();
 
-  useEffect(() => {
-    $(".features-curosel2").owlCarousel({
-      loop: true,
-      nav: true,
-      autoplay: false,
-      autoplayTimeout: 5000,
-      navText: [
-        "<FontAwesomeIcon icon={faEye} />",
-        "<FontAwesomeIcon icon={faList} />",
-      ],
-      smartSpeed: 2000,
-      margin: 30,
-      item: 4,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        576: {
-          items: 1,
-        },
-        768: {
-          items: 2,
-        },
-        992: {
-          items: 3,
-        },
-        1200: {
-          items: 4,
-        },
-      },
-    });
-  }, []);
-
   const navtab = {
     one: [
       {
@@ -177,7 +144,6 @@ export default function Home() {
   return (
     <div>
       <HeroSlider />
-
       <section className="design-area home-4">
         <div className="container">
           <div className="bottom-design res">

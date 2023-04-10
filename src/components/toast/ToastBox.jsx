@@ -7,8 +7,6 @@ import ToastItem from "./Toast";
 export default function ToastBox({ content, error = false }) {
   const { toastList } = useToast();
 
-  console.log(toastList.length);
-
   return (
     <div
       aria-live="polite"

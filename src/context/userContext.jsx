@@ -81,7 +81,6 @@ export function UserProvider({ user, children }) {
     }
   };
 
-  console.log(cartProducts, total);
   const value = {
     user,
     cartProducts,
