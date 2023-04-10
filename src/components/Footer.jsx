@@ -1,6 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../constant/routes";
+import {
+  faEnvelope,
+  faMapMarker,
+  faPhone,
+  faRss,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDribbble,
+  faFacebookF,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
@@ -15,7 +28,7 @@ export default function Footer() {
                   <ul>
                     <li>
                       <a href="#">
-                        <i className="fa fa-map-marker"></i>
+                        <FontAwesomeIcon icon={faMapMarker} />
                         <span>
                           NORAURE London Oxford Street 012 United Kingdom.
                         </span>
@@ -23,6 +36,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a href="#">
+                        <FontAwesomeIcon icon={faEnvelope} />
                         <i className="fa fa-envelope"></i>
                         <span>
                           emailnoraure@gmail.com emailsupport@gmail.com
@@ -31,6 +45,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a href="#">
+                        <FontAwesomeIcon icon={faPhone} />
                         <i className="fa fa-phone"></i>
                         <span>
                           (+92) 3456 7890
@@ -152,27 +167,27 @@ export default function Footer() {
                     <ul className="socials">
                       <li>
                         <a href="#">
-                          <i className="fa fa-facebook"></i>
+                          <FontAwesomeIcon icon={faFacebookF} />
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i className="fa fa-twitter"></i>
+                          <FontAwesomeIcon icon={faTwitter} />
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i className="fa fa-linkedin"></i>
+                          <FontAwesomeIcon icon={faLinkedinIn} />
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i className="fa fa-rss"></i>
+                          <FontAwesomeIcon icon={faRss} />
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i className="fa fa-dribbble"></i>
+                          <FontAwesomeIcon icon={faDribbble} />
                         </a>
                       </li>
                     </ul>
@@ -199,22 +214,22 @@ export default function Footer() {
                 <ul>
                   <li>
                     <a href="#">
-                      <img src="img/icon-img/payment-1.jpg" alt="" />
+                      <img src="/img/icon-img/payment-1.jpg" alt="" />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="img/icon-img/payment-2.jpg" alt="" />
+                      <img src="/img/icon-img/payment-2.jpg" alt="" />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="img/icon-img/payment-3.jpg" alt="" />
+                      <img src="/img/icon-img/payment-3.jpg" alt="" />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="img/icon-img/payment-4.jpg" alt="" />
+                      <img src="/img/icon-img/payment-4.jpg" alt="" />
                     </a>
                   </li>
                 </ul>

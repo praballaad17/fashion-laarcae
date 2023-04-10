@@ -75,7 +75,7 @@ export default function Shop() {
   return (
     <Container>
       <Row>
-        <Col xs={3}>
+        <Col lg={3}>
           <div class="all-shop-sidebar">
             <div class="top-shop-sidebar">
               <h3 class="wg-title">SHOP BY</h3>
@@ -254,7 +254,7 @@ export default function Shop() {
             </div>
           </div>
         </Col>
-        <Col xs={9}>
+        <Col lg={9}>
           <Row>
             <Col>
               {/* <!-- Nav tabs --> */}
@@ -308,10 +308,10 @@ export default function Shop() {
               </div>
             </Col>
           </Row>
-          <Container className="d-flex flex-wrap mb-3 ml-3">
+          <Container className="d-flex flex-wrap mb-3 ml-lg-3 mx-xs-auto">
             {products &&
               products.map((item) => (
-                <Col className="mr-2 px-2" xs={4}>
+                <Col className="mr-2 px-2" lg={4} md={6} sm={12}>
                   <div className="tb-product-item-inner tb2 pct-last">
                     <span className="onsale two">Sale!</span>
                     <img alt="" src={item.img} />

@@ -52,6 +52,15 @@
 }
 /* Normal desktop :1024px. */
 @media (min-width: 992px) and (max-width: 1199px) {
+  .gmap_canvas {
+    height: 370px;
+    width: 800px;
+  }
+
+  .mapouter {
+    height: 370px;
+    width: 800px;
+  }
   .DateCountdown .time_circles > div {
     margin-top: 55px;
   }
@@ -186,6 +195,15 @@
 
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+  .gmap_canvas {
+    height: 370px;
+    width: 700px;
+  }
+
+  .mapouter {
+    height: 370px;
+    width: 700px;
+  }
   .DateCountdown .time_circles > div {
     margin-top: 46px;
   }
@@ -1479,6 +1497,17 @@
   .slide-all2 {
     margin-left: 119px;
   }
+
+  .gmap_canvas {
+    height: 370px;
+    width: 500px;
+  }
+
+  .mapouter {
+    height: 370px;
+    width: 500px;
+  }
+
   h2.title5.s3 {
     font-size: 12px;
     letter-spacing: 4px;

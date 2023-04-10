@@ -241,11 +241,25 @@ export default function Home() {
                         id="home"
                       >
                         <OwlCarousel
-                          items={4}
+                          // items={4}
                           className="owl-theme"
                           loop
                           nav
                           margin={20}
+                          responsive={{
+                            0: {
+                              items: 1,
+                            },
+                            450: {
+                              items: 2,
+                            },
+                            600: {
+                              items: 3,
+                            },
+                            1000: {
+                              items: 4,
+                            },
+                          }}
                         >
                           {navtab.one &&
                             navtab.one.map((item) => (
@@ -313,6 +327,20 @@ export default function Home() {
                           loop
                           nav
                           margin={20}
+                          responsive={{
+                            0: {
+                              items: 1,
+                            },
+                            450: {
+                              items: 2,
+                            },
+                            600: {
+                              items: 3,
+                            },
+                            1000: {
+                              items: 4,
+                            },
+                          }}
                         >
                           {navtab.two &&
                             navtab.two.map((item) => (
@@ -381,6 +409,20 @@ export default function Home() {
                           loop
                           nav
                           margin={20}
+                          responsive={{
+                            0: {
+                              items: 1,
+                            },
+                            450: {
+                              items: 2,
+                            },
+                            600: {
+                              items: 3,
+                            },
+                            1000: {
+                              items: 4,
+                            },
+                          }}
                         >
                           {navtab.three &&
                             navtab.three.map((item, idx) => (

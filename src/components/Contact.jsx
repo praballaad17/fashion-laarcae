@@ -7,19 +7,6 @@ import Row from "react-bootstrap/esm/Row";
 import { Link } from "react-router-dom";
 
 export default function Contact() {
-  const gmap_canvas = {
-    overflow: "faHandMiddleFinger",
-    background: "none",
-    height: "370px",
-    width: "1000px",
-  };
-
-  const mapouter = {
-    position: "relative",
-    textAlign: "right",
-    height: "370px",
-    width: "1000px",
-  };
   return (
     <>
       <section className="contact-img-area">
@@ -41,7 +28,7 @@ export default function Contact() {
           <Col>
             <form id="contact-form" method="post">
               <Row>
-                <Col>
+                <Col xs={12} lg={6}>
                   <div className="row">
                     <div className="all-contact">
                       <div className="col-lg-12 col-md-12 col-12">
@@ -84,7 +71,7 @@ export default function Contact() {
                     </div>
                   </div>
                 </Col>
-                <Col>
+                <Col xs={12} lg={6}>
                   <label className="l-contact con-color">
                     Content <em>*</em>
                   </label>
@@ -105,12 +92,12 @@ export default function Contact() {
             </form>
           </Col>
         </Row>
-        <Row className="d-flex justify-content-center m-5">
-          <div style={mapouter}>
-            <div style={gmap_canvas}>
+        <Row className="d-flex justify-content-center m-lg-5">
+          <div className="mapouter">
+            <div className="gmap_canvas">
               <iframe
-                width="1000"
-                height="370"
+                // width="1000"
+                // height="300"
                 id="gmap_canvas"
                 src="https://maps.google.com/maps?q=california&t=&z=10&ie=UTF8&iwloc=&output=embed"
                 frameborder="0"
@@ -118,9 +105,6 @@ export default function Contact() {
                 marginheight="0"
                 marginwidth="0"
               ></iframe>
-              <a href="https://2yu.co">2yu</a>
-              <br />
-              <a href="https://embedgooglemap.2yu.co">html embed google map</a>
             </div>
           </div>
         </Row>
