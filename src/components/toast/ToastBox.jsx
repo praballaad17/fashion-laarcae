@@ -12,7 +12,7 @@ export default function ToastBox({ content, error = false }) {
       aria-live="polite"
       aria-atomic="true"
       className={`position-fixed top-0 end-0 ${
-        toastList.length ? "w-25" : "w-0"
+        toastList.length ? "w-100" : "w-0"
       }`}
       style={{ zIndex: 1000 }}
     >
