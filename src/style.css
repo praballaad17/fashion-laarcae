@@ -3338,10 +3338,12 @@ a.o-back-to:hover {
 .nr-wish-area {
   margin: 18px 0 40px;
 }
-.s-cart-all .page-title h1 {
+.s-cart-all .page-title h1,
+.page-title h1 {
   margin: 35px 0 30px;
 }
-.s-cart-all .page-title h1 {
+.s-cart-all .page-title h1,
+.page-title h1 {
   color: #474747;
   font-family: Oswald;
   font-size: 30px;
@@ -4193,11 +4195,12 @@ p.checkout-coupon.an-cop input[type="submit"] {
   width: 100%;
 }
 .tb-tab-container2 .etabs {
-  border-bottom: 1px solid #ddd;
+  color: black;
+  /* border-bottom: 1px solid #ddd;
   float: left;
   margin: 20px 0 0;
   padding: 0;
-  width: 35%;
+  width: 35%; */
 }
 .tb-tab-container2 .etabs li {
   background: #fff none repeat scroll 0 0;
@@ -4205,18 +4208,20 @@ p.checkout-coupon.an-cop input[type="submit"] {
   display: inline-block;
   width: 100%;
 }
-.tb-tab-container2 .etabs li a.active {
+.tb-tab-container2 .etabs li a.active,
+.etabs a.active {
   background: #ce9634 none repeat scroll 0 0;
   color: #fff;
 }
-.tb-tab-container2 .etabs li a {
+.tb-tab-container2 .etabs li a,
+.etabs a {
   color: #6f6f6f;
-  display: inline-block;
-  font-size: 13px;
-  outline: medium none;
-  padding: 15px 20px;
+  /* display: inline-block; */
+  /* font-size: 13px; */
+  /* outline: medium none; */
+  /* padding: 15px 20px; */
   text-transform: uppercase;
-  width: 100%;
+  /* width: 100%; */
 }
 .tb-tab-container2 .nav-tabs > li.active > a,
 .tb-tab-container2 .nav-tabs > li.active > a:hover,

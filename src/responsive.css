@@ -566,6 +566,15 @@
 }
 /* small mobile :320px. */
 @media (max-width: 767px) {
+  .gmap_canvas {
+    height: 370px;
+    width: 310px;
+  }
+
+  .mapouter {
+    height: 370px;
+    width: 310px;
+  }
   .home-2.home-5 .stick .mobile-menu {
     top: 76px;
   }

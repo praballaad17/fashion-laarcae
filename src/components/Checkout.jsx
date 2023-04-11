@@ -19,8 +19,6 @@ export default function Checkout() {
     setAddressChange((prev) => !prev);
   };
 
-  console.log(changeShippingAddress);
-
   useEffect(() => {
     var checked = $(".sin-payment input:checked");
     if (checked) {
@@ -80,7 +78,7 @@ export default function Checkout() {
           </div>
         </Row>
         <Row>
-          <Col xs={7} className="text-sin">
+          <Col lg={7} xs={12} className="text-sin">
             <Tabs
               defaultActiveKey="Address"
               id="uncontrolled-tab-example"
@@ -1039,7 +1037,7 @@ export default function Checkout() {
               </Tab.Content>
             </Tab.Container> */}
           </Col>
-          <Col xs={5}>
+          <Col lg={5} xs={12}>
             <div className="ro-checkout-summary">
               <div className="ro-title">
                 <h3 className="checkbox9">ORDER SUMMARY</h3>

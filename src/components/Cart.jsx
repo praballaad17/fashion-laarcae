@@ -100,21 +100,26 @@ export default function Cart() {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col>
+        <Row className="mt-3">
+          <Col lg={7} xs={12}>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
               <Row>
-                <Col sm={3}>
-                  <Nav variant="pills" className="flex-column">
+                <Col sm={4}>
+                  <Nav
+                    // variant="pills"
+                    className="etabs flex-sm-column flex-xs-row"
+                  >
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                      <Nav.Link eventKey="first">
+                        Estimate Shipping & Taxe
+                      </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                      <Nav.Link eventKey="second">Use Coupon Code</Nav.Link>
                     </Nav.Item>
                   </Nav>
                 </Col>
-                <Col sm={9}>
+                <Col sm={8}>
                   <Tab.Content>
                     <Tab.Pane eventKey="first">
                       <div className="top-shopping4">
@@ -198,7 +203,7 @@ export default function Cart() {
               </Row>
             </Tab.Container>
           </Col>
-          <Col>
+          <Col lg={5} xs={12}>
             <div className="sub-total">
               <table>
                 <tbody>

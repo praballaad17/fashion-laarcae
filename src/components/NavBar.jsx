@@ -93,9 +93,9 @@ export default function NavBar() {
               <div className="col-sm-12">
                 <div className="header-wrapper">
                   <div className="logo hm4 floatleft">
-                    <a href="index.html">
+                    <Link to={ROUTES.DASHBOARD}>
                       <img src={Logo} alt="" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="menu-cart floatright">
                     <div className="mobile-menu ">
