@@ -13,13 +13,13 @@ export default function ProductModal({ onClose, open, product }) {
     >
       <Modal show={open} onHide={onClose} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>{product?.name}</Modal.Title>
+          <Modal.Title>{product?.title.rendered}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
           <Row>
             <Col>
-              <img src={product.img}></img>
+              <img src={product.product_images_1}></img>
             </Col>
             <Col>
               <div className="tb-product-wrap-price-rating">
@@ -27,7 +27,7 @@ export default function ProductModal({ onClose, open, product }) {
                   <span className="amount2 ana">${product.price}</span>
                 </div>
               </div>
-              <p>Modal body text goes here.</p>
+              <p>{product.content.rendered}</p>
               <div class="last-cart l-mrgn ns">
                 <a class="las4" href="#">
                   Add To Cart

@@ -6,13 +6,16 @@ import React, {
   useCallback,
 } from "react";
 import { useToast } from "./toastContext";
+import axios from "axios";
 
+const apiEndpoint = `https://fashion.laarcae.com/wp-json/wp/v2`;
 const UserContext = createContext();
 
 export function useUser() {
   return useContext(UserContext);
 }
 export function UserProvider({ user, children }) {
+  const [products, setProducts] = useState([]);
   const [cartProducts, setCartProduct] = useState([]);
   const [wishProducts, setWishProduct] = useState([]);
   const [total, setTotal] = useState(0);
@@ -23,8 +26,10 @@ export function UserProvider({ user, children }) {
       ...product,
       quantity: qnt,
     };
-    setCartProduct((prev) => [...prev, product]);
-    getTotal();
+    const cartArray = [...cartProducts, product];
+    // setCartProduct((prev) => [...prev, product]);
+    setCartProduct(cartArray);
+    getTotal(cartArray);
   };
 
   const addToWishList = (product) => {
@@ -81,6 +86,14 @@ export function UserProvider({ user, children }) {
     }
   };
 
+  const getProducts = async () => {
+    const { data } = await axios.get(
+      `${apiEndpoint}/product?_fields=title,id,price,product_images_1,discounted_price,product_images_2,product_images_3,product_images_4,content`
+    );
+    console.log(data);
+    setProducts(data);
+  };
+
   const value = {
     user,
     cartProducts,
@@ -92,6 +105,8 @@ export function UserProvider({ user, children }) {
     wishProducts,
     addToWishList,
     removeProductFromWishList,
+    getProducts,
+    products,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

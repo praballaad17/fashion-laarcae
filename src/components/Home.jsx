@@ -15,8 +15,13 @@ export default function Home() {
   const [activeTab, setTab] = useState(2);
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState();
-  const { addToCart, addToWishList } = useUser();
+  const { addToCart, addToWishList, getProducts, products } = useUser();
   const { addToast } = useToast();
+
+  useEffect(() => {
+    getProducts();
+    console.log(products);
+  }, []);
 
   const navtab = {
     one: [

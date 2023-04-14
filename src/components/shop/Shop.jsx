@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ProductModal from "../ProductModal";
 import { useUser } from "../../context/userContext";
@@ -12,65 +12,70 @@ import { useToast } from "../../context/toastContext";
 export default function Shop() {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState();
-  const { addToCart, addToWishList } = useUser();
+  const { addToCart, addToWishList, getProducts, products } = useUser();
   const { addToast } = useToast();
 
-  const products = [
-    {
-      id: 1,
-      img: "/img/product/1.jpg",
-      name: "Blue Bag",
-      price: "120",
-    },
-    {
-      id: 2,
-      img: "/img/product/2.jpg",
-      name: "Black Leather Shoes",
-      price: "300",
-    },
-    {
-      id: 3,
-      img: "/img/product/3.jpg",
-      name: "Brown Leather Shoes",
-      price: "220",
-    },
-    {
-      id: 4,
-      img: "/img/product/4.jpg",
-      name: "Brown Bag",
-      price: "210",
-    },
-    {
-      id: 5,
-      img: "/img/product/5.jpg",
-      name: "Silver Leather Bag",
-      price: "200",
-    },
-    {
-      id: 6,
-      img: "/img/product/6.jpg",
-      name: "Googles Black",
-      price: "190",
-    },
-    {
-      id: 7,
-      img: "/img/product/7.jpg",
-      name: "White Leather Bag",
-      price: "180",
-    },
-    {
-      id: 8,
-      img: "/img/product/8.jpg",
-      name: "Golden Leather Bag",
-      price: "170",
-    },
-    {
-      id: 9,
-      img: "/img/product/9.jpg",
-      name: "Glasses",
-      price: "100",
-    },
-  ];
+  // const products = [
+  //   {
+  //     id: 1,
+  //     img: "/img/product/1.jpg",
+  //     name: "Blue Bag",
+  //     price: "120",
+  //   },
+  //   {
+  //     id: 2,
+  //     img: "/img/product/2.jpg",
+  //     name: "Black Leather Shoes",
+  //     price: "300",
+  //   },
+  //   {
+  //     id: 3,
+  //     img: "/img/product/3.jpg",
+  //     name: "Brown Leather Shoes",
+  //     price: "220",
+  //   },
+  //   {
+  //     id: 4,
+  //     img: "/img/product/4.jpg",
+  //     name: "Brown Bag",
+  //     price: "210",
+  //   },
+  //   {
+  //     id: 5,
+  //     img: "/img/product/5.jpg",
+  //     name: "Silver Leather Bag",
+  //     price: "200",
+  //   },
+  //   {
+  //     id: 6,
+  //     img: "/img/product/6.jpg",
+  //     name: "Googles Black",
+  //     price: "190",
+  //   },
+  //   {
+  //     id: 7,
+  //     img: "/img/product/7.jpg",
+  //     name: "White Leather Bag",
+  //     price: "180",
+  //   },
+  //   {
+  //     id: 8,
+  //     img: "/img/product/8.jpg",
+  //     name: "Golden Leather Bag",
+  //     price: "170",
+  //   },
+  //   {
+  //     id: 9,
+  //     img: "/img/product/9.jpg",
+  //     name: "Glasses",
+  //     price: "100",
+  //   },
+  // ];
+
+  useEffect(() => {
+    getProducts();
+    console.log(products);
+  }, []);
 
   return (
     <Container>
@@ -314,7 +319,7 @@ export default function Shop() {
                 <Col className="mr-2 px-2" lg={4} md={6} sm={12}>
                   <div className="tb-product-item-inner tb2 pct-last">
                     <span className="onsale two">Sale!</span>
-                    <img alt="" src={item.img} />
+                    <img alt="" src={item.product_images_1} />
                     <a
                       className="la-icon"
                       onClick={() => {
@@ -329,7 +334,9 @@ export default function Shop() {
                     <div className="tb-content">
                       <div className="tb-it">
                         <div className="tb-beg">
-                          <Link to={`/product/${item.id}`}>{item.name}</Link>
+                          <Link to={`/product/${item.id}`}>
+                            {item.title.rendered}
+                          </Link>
                         </div>
                         <div className="tb-product-wrap-price-rating">
                           <div className="tb-product-price font-noraure-3">
