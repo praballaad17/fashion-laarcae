@@ -2,22 +2,35 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleUp, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { ToastProvider } from "./context/toastContext";
 import { UserProvider } from "./context/userContext";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import * as ROUTES from "./constant/routes";
-import Shop from "./components/shop/Shop";
-import Footer from "./components/Footer";
-import Cart from "./components/Cart";
-import WishList from "./components/WishList";
-import Login from "./components/Login";
-import Checkout from "./components/Checkout";
-import MyAccount from "./components/MyAccount";
-import Contact from "./components/Contact";
-import SingleProduct from "./components/singleProduct/SingleProduct";
-import { ToastProvider } from "./context/toastContext";
-import ToastBox from "./components/toast/ToastBox";
 import useAuthListener from "./hooks/useAuthListener";
+import * as ROUTES from "./constant/routes";
+import Footer from "./components/Footer";
+
+// import Shop from "./components/shop/Shop";
+// import Cart from "./components/Cart";
+// import WishList from "./components/WishList";
+// import Login from "./components/Login";
+// import Checkout from "./components/Checkout";
+// import MyAccount from "./components/MyAccount";
+// import Contact from "./components/Contact";
+// import SingleProduct from "./components/singleProduct/SingleProduct";
+// import ToastBox from "./components/toast/ToastBox";
+
+const Shop = lazy(() => import("./components/shop/Shop"));
+const Cart = lazy(() => import("./components/Cart"));
+const WishList = lazy(() => import("./components/WishList"));
+const Login = lazy(() => import("./components/Login"));
+const Checkout = lazy(() => import("./components/Checkout"));
+const MyAccount = lazy(() => import("./components/MyAccount"));
+const Contact = lazy(() => import("./components/Contact"));
+const SingleProduct = lazy(() =>
+  import("./components/singleProduct/SingleProduct")
+);
+const ToastBox = lazy(() => import("./components/toast/ToastBox"));
 
 function App() {
   const { userId } = useAuthListener();
