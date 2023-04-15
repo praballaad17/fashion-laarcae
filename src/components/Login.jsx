@@ -43,7 +43,6 @@ export default function Login() {
         username: loginUser.username,
         password: loginUser.password,
       });
-      console.log(res);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("displayName", res.data.user_display_name);
       localStorage.setItem("email", res.data.user_email);
@@ -51,6 +50,7 @@ export default function Login() {
       window.location = "/";
     } catch (error) {
       console.log(error);
+      addToast(`${error.response.data.code}`, true);
     }
   };
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useUser } from "../context/userContext";
+import * as ROUTES from "../constant/routes";
 
 import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
@@ -7,6 +8,7 @@ import Row from "react-bootstrap/esm/Row";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cartProducts, total, changeQuantity } = useUser();
@@ -226,13 +228,13 @@ export default function Cart() {
             </div>
             <div className="wc-proceed-to-checkout">
               <p className="return-to-shop">
-                <a className="button wc-backward" href="#">
+                <Link className="button wc-backward" to={ROUTES.DASHBOARD}>
                   Continue Shopping
-                </a>
+                </Link>
               </p>
-              <a className="wc-forward wc-forward-cart" href="#">
+              <Link className="wc-forward wc-forward-cart" to={ROUTES.CHECKOUT}>
                 Confirm Order
-              </a>
+              </Link>
             </div>
           </Col>
         </Row>
