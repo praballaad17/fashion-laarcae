@@ -48,16 +48,16 @@ export default function Cart() {
                 </tr>
                 {cartProducts && cartProducts.length ? (
                   cartProducts.map((product) => (
-                    <tr>
+                    <tr key={product.id}>
                       <td className="sop-cart an-shop-cart">
                         <a href="#">
                           <img
                             className="primary-image"
                             alt=""
-                            src={product.img}
+                            src={product.product_images_1}
                           />
                         </a>
-                        <a href="#">{product.name}</a>
+                        <a href="#">{product.title.rendered}</a>
                       </td>
                       <td className="sop-cart an-sh">
                         <Form.Select
@@ -67,11 +67,13 @@ export default function Cart() {
                           aria-label="Default select example"
                         >
                           {tenInt.map((n) => (
-                            <option selected={n === product.quantity} value={n}>
+                            <option selected={product.quantity === n} value={n}>
                               {n}
                             </option>
                           ))}
-                          <option value="0">0 (Delete)</option>
+                          <option selected={product.quantity === 0} value="0">
+                            0 (Delete)
+                          </option>
                         </Form.Select>
                       </td>
                       <td className="sop-cart">

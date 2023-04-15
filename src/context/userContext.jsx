@@ -23,6 +23,17 @@ export function UserProvider({ userId, children }) {
   const { addToast } = useToast();
 
   const addToCart = (product, qnt = 1) => {
+    let isExsit = false;
+    cartProducts.map((item) => {
+      if (item.id === product.id) {
+        isExsit = true;
+        return;
+      }
+    });
+    if (isExsit) {
+      addToast(`${product.title.rendered} is already in the cart`, true);
+      return;
+    }
     product = {
       ...product,
       quantity: qnt,
@@ -91,7 +102,6 @@ export function UserProvider({ userId, children }) {
     const { data } = await axios.get(
       `${apiEndpoint}/product?_fields=title,id,price,product_images_1,discounted_price,product_images_2,product_images_3,product_images_4,content`
     );
-    console.log(data);
     setProducts(data);
   };
 

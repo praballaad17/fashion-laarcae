@@ -24,126 +24,9 @@ export default function Home() {
   }, []);
 
   const navtab = {
-    one: [
-      {
-        id: 1,
-        img: "/img/product/1.jpg",
-        name: "Blue Bag",
-        price: "120",
-      },
-      {
-        id: 2,
-        img: "/img/product/2.jpg",
-        name: "Black Leather Shoes",
-        price: "300",
-      },
-      {
-        id: 3,
-        img: "/img/product/3.jpg",
-        name: "Brown Leather Shoes",
-        price: "220",
-      },
-      {
-        id: 4,
-        img: "/img/product/4.jpg",
-        name: "Brown Bag",
-        price: "210",
-      },
-      {
-        id: 5,
-        img: "/img/product/5.jpg",
-        name: "Silver Leather Bag",
-        price: "200",
-      },
-    ],
-    two: [
-      {
-        id: 4,
-        img: "/img/product/4.jpg",
-        name: "Brown Bag",
-        price: "210",
-      },
-      {
-        id: 5,
-        img: "/img/product/5.jpg",
-        name: "Silver Leather Bag",
-        price: "200",
-      },
-      {
-        id: 6,
-        img: "/img/product/6.jpg",
-        name: "Googles Black",
-        price: "190",
-      },
-      {
-        id: 7,
-        img: "/img/product/7.jpg",
-        name: "White Leather Bag",
-        price: "180",
-      },
-      {
-        id: 8,
-        img: "/img/product/8.jpg",
-        name: "Golden Leather Bag",
-        price: "170",
-      },
-      {
-        id: 9,
-        img: "/img/product/9.jpg",
-        name: "Glasses",
-        price: "100",
-      },
-    ],
-    three: [
-      {
-        id: 7,
-        img: "/img/product/7.jpg",
-        name: "White Leather Bag",
-        price: "180",
-      },
-      {
-        id: 8,
-        img: "/img/product/8.jpg",
-        name: "Golden Leather Bag",
-        price: "170",
-      },
-      {
-        id: 1,
-        img: "/img/product/1.jpg",
-        name: "Blue Bag",
-        price: "120",
-      },
-      {
-        id: 2,
-        img: "/img/product/2.jpg",
-        name: "Black Leather Shoes",
-        price: "300",
-      },
-      {
-        id: 3,
-        img: "/img/product/3.jpg",
-        name: "Brown Leather Shoes",
-        price: "220",
-      },
-      {
-        id: 4,
-        img: "/img/product/4.jpg",
-        name: "Brown Bag",
-        price: "210",
-      },
-      {
-        id: 5,
-        img: "/img/product/5.jpg",
-        name: "Silver Leather Bag",
-        price: "200",
-      },
-      {
-        id: 6,
-        img: "/img/product/6.jpg",
-        name: "Googles Black",
-        price: "190",
-      },
-    ],
+    one: [...products],
+    two: [...products],
+    three: [...products],
   };
 
   return (
@@ -269,7 +152,7 @@ export default function Home() {
                           {navtab.one &&
                             navtab.one.map((item) => (
                               <div className="tb-product-item-inner tb2 pct-last">
-                                <img alt="" src={item.img} />
+                                <img alt="" src={item.product_images_1} />
                                 <a
                                   className="la-icon"
                                   onClick={() => {
@@ -285,7 +168,7 @@ export default function Home() {
                                   <div className="tb-it">
                                     <div className="tb-beg">
                                       <Link to={`/product/${item.id}`}>
-                                        {item.name}
+                                        {item.title.rendered}
                                       </Link>
                                     </div>
                                     <div className="tb-product-wrap-price-rating">
@@ -351,7 +234,7 @@ export default function Home() {
                             navtab.two.map((item) => (
                               <div className="tb-product-item-inner tb2 pct-last">
                                 <span className="onsale two">Sale!</span>
-                                <img alt="" src={item.img} />
+                                <img alt="" src={item.product_images_1} />
                                 <a
                                   className="la-icon"
                                   onClick={() => {
@@ -367,7 +250,7 @@ export default function Home() {
                                   <div className="tb-it">
                                     <div className="tb-beg">
                                       <Link to={`/product/${item.id}`}>
-                                        {item.name}
+                                        {item.title.rendered}
                                       </Link>
                                     </div>
                                     <div className="tb-product-wrap-price-rating">
@@ -436,7 +319,7 @@ export default function Home() {
                                 key={idx}
                               >
                                 <span className="onsale">Sale!</span>
-                                <img alt="" src={item.img} />
+                                <img alt="" src={item.product_images_1} />
                                 <a
                                   className="la-icon"
                                   onClick={() => {
@@ -452,7 +335,7 @@ export default function Home() {
                                   <div className="tb-it">
                                     <div className="tb-beg">
                                       <Link to={`/product/${item.id}`}>
-                                        {item.name}
+                                        {item.title.rendered}
                                       </Link>
                                     </div>
                                     <div className="tb-product-wrap-price-rating">

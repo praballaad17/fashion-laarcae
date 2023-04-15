@@ -15,6 +15,8 @@ export default function WishList() {
   const [product, setProduct] = useState();
   const { wishProducts, addToCart, removeProductFromWishList } = useUser();
 
+  console.log(wishProducts);
+
   return (
     <>
       <section className="contact-img-area">
@@ -54,7 +56,7 @@ export default function WishList() {
                         <th className="low5"></th>
                       </tr>
                       {wishProducts.map((item) => (
-                        <tr>
+                        <tr key={item.id}>
                           <td className="sop-icon1">
                             <a
                               onClick={() => removeProductFromWishList(item.id)}
