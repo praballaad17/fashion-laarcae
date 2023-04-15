@@ -4401,6 +4401,10 @@ p.checkout-coupon.full input[type="submit"] {
   overflow: hidden;
 }
 /*--------------------- 17. single-product--------------------*/
+
+#zoom-figure:hover img {
+  opacity: 0;
+}
 .single-product-area {
   margin: 50px 0;
 }

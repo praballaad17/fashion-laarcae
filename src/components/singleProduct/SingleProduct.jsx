@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ReactImageMagnify from "react-image-magnify";
 import axios from "axios";
 
 import Button from "react-bootstrap/Button";
@@ -21,7 +20,11 @@ export default function SingleProduct() {
   const [product, setProduct] = useState();
   const [qnt, setQnt] = useState(0);
   const [starSelected, setStarSelected] = useState(0);
-  const [bigImg, setBigImg] = useState();
+  const [bigImg, setBigImg] = useState(product?.product_images_1);
+  const [imgStyle, setImgStyle] = useState({
+    backgroundImage: `url(${bigImg})`,
+    backgroundPosition: "0% 0%",
+  });
   const { addToCart, addToWishList } = useUser();
   const { addToast } = useToast();
   const [review, setReview] = useState({
@@ -29,11 +32,18 @@ export default function SingleProduct() {
     email: "",
     content: "",
   });
+  console.log(bigImg, imgStyle);
+
+  useEffect(() => {
+    setImgStyle({
+      ...imgStyle,
+      backgroundImage: `url(${bigImg})`,
+    });
+  }, [bigImg]);
 
   const apiEndpoint = `https://fashion.laarcae.com/wp-json/wp/v2`;
 
   useEffect(() => {
-    console.log(productId);
     const getProduct = async () => {
       try {
         const resproduct = await axios.get(
@@ -49,7 +59,13 @@ export default function SingleProduct() {
     getProduct();
   }, []);
 
-  console.log(product);
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = e.target.getBoundingClientRect();
+    console.log(left, top, width, height);
+    const x = ((e.pageX - left) / width) * 100;
+    const y = ((e.pageY - top) / height) * 100;
+    setImgStyle({ ...imgStyle, backgroundPosition: `${x}% ${y}%` });
+  };
 
   return (
     <div>
@@ -83,23 +99,13 @@ export default function SingleProduct() {
                             className="tab-pane fade show active"
                           >
                             <div className="s_big">
-                              <ReactImageMagnify
-                                {...{
-                                  smallImage: {
-                                    alt: "Wristwatch by Ted Baker London",
-                                    isFluidWidth: true,
-                                    src: bigImg,
-                                  },
-                                  largeImage: {
-                                    src: bigImg,
-                                    width: 500,
-                                    height: 500,
-                                  },
-                                }}
-                              />
-                              {/* <a href="img/product/t1.jpg" className="demo4">
-                            <img src="/src/img/product/8.jpg" alt="" />
-                          </a> */}
+                              <figure
+                                id="zoom-figure"
+                                onMouseMove={handleMouseMove}
+                                style={imgStyle}
+                              >
+                                <img src={bigImg} />
+                              </figure>
                             </div>
                           </div>
                         </div>
