@@ -12,11 +12,11 @@ export default function CartModal() {
           cartProducts.map((product) => (
             <div className="cat">
               <a className="image" href="#">
-                <img src={product.img} alt="" />
+                <img src={product.product_images_1} alt="" />
               </a>
               <div className="cat_two">
                 <p>
-                  <a href="#">{product.name}</a>
+                  <a href="#">{product.title.rendered}</a>
                 </p>
                 <p>
                   <span className="agn">{product.quantity} </span>x

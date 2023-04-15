@@ -17,9 +17,11 @@ import Contact from "./components/Contact";
 import SingleProduct from "./components/singleProduct/SingleProduct";
 import { ToastProvider } from "./context/toastContext";
 import ToastBox from "./components/toast/ToastBox";
+import useAuthListener from "./hooks/useAuthListener";
 
 function App() {
-  const [user, setUser] = useState();
+  const { userId } = useAuthListener();
+
   const [quickTop, setQuick] = useState(false);
 
   const handleScrollToTop = () => {
@@ -39,13 +41,16 @@ function App() {
   return (
     <div className="App">
       <ToastProvider>
-        <UserProvider user={user}>
+        <UserProvider userId={userId}>
           <Router>
             <NavBar />
             <ToastBox />
             <Suspense fallback={<div></div>}>
               <Routes>
-                <Route path={ROUTES.DASHBOARD} element={<Home user={user} />} />
+                <Route
+                  path={ROUTES.DASHBOARD}
+                  element={<Home userId={userId} />}
+                />
                 <Route
                   path={ROUTES.SIGNLEPRODUCT}
                   element={<SingleProduct />}

@@ -24,7 +24,10 @@ export default function ProductModal({ onClose, open, product }) {
             <Col>
               <div className="tb-product-wrap-price-rating">
                 <div className="tb-product-price font-noraure-3">
-                  <span className="amount2 ana">${product.price}</span>
+                  <span className="amount">${product.price}</span>
+                  <span className="amount2 ana">
+                    ${product.discounted_price}
+                  </span>
                 </div>
               </div>
               <p>{product.content.rendered}</p>

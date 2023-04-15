@@ -12,18 +12,12 @@ import {
 import * as ROUTES from "../constant/routes";
 import CartModal from "./shop/CartModal";
 import { useUser } from "../context/userContext";
-
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import { logout } from "../services/apiServices";
 
 export default function NavBar() {
   const [isCart, setCart] = useState(false);
-  const { cartProducts } = useUser();
+  const { cartProducts, userId } = useUser();
+
   useEffect(() => {
     var stickyTop = $(".header-menu").offset().top;
     $(window).on("scroll", function () {
@@ -53,20 +47,37 @@ export default function NavBar() {
               <div className="col-lg-6 col-md-6 col-sm-7 col-12">
                 <div className="widget">
                   <ul>
-                    <li>
-                      <Link to={ROUTES.MYACCOUNT}>My Account</Link>
-                    </li>
+                    {userId ? (
+                      <li>
+                        <Link to={ROUTES.MYACCOUNT}>My Account</Link>
+                      </li>
+                    ) : (
+                      <></>
+                    )}
                     <li>
                       <Link to={ROUTES.WISHLIST}>Wishlist</Link>
                     </li>
                     <li>
                       <Link to={ROUTES.CHECKOUT}>Check Out</Link>
                     </li>
-                    <li>
-                      <Link className="tb-login" to={ROUTES.LOGIN}>
-                        Login
-                      </Link>
-                    </li>
+                    {userId ? (
+                      <li>
+                        <div className="tb-login" onClick={logout}>
+                          Logout
+                        </div>
+                      </li>
+                    ) : (
+                      <></>
+                    )}
+                    {!userId ? (
+                      <li>
+                        <Link className="tb-login" to={ROUTES.LOGIN}>
+                          Login
+                        </Link>
+                      </li>
+                    ) : (
+                      <></>
+                    )}
                   </ul>
                 </div>
               </div>

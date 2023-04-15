@@ -18,7 +18,9 @@ export default function ToastBox({ content, error = false }) {
     >
       <ToastContainer position="top-end" className="p-3">
         {toastList && toastList.length ? (
-          toastList.map((toast, idx) => <ToastItem toast={toast} idx={idx} />)
+          toastList.map((toast, idx) => (
+            <ToastItem key={idx} toast={toast} idx={idx} />
+          ))
         ) : (
           <></>
         )}

@@ -14,7 +14,8 @@ const UserContext = createContext();
 export function useUser() {
   return useContext(UserContext);
 }
-export function UserProvider({ user, children }) {
+export function UserProvider({ userId, children }) {
+  const [user, setUser] = useState();
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProduct] = useState([]);
   const [wishProducts, setWishProduct] = useState([]);
@@ -95,6 +96,7 @@ export function UserProvider({ user, children }) {
   };
 
   const value = {
+    userId,
     user,
     cartProducts,
     total,

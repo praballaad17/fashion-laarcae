@@ -67,13 +67,13 @@ export default function WishList() {
                               <img
                                 className="primary-image"
                                 alt=""
-                                src={item.img}
+                                src={item.product_images_1}
                               />
                             </a>
                           </td>
                           <td className="sop-cart an-sh">
                             <div className="tb-beg">
-                              <a href="#">{item.name}</a>
+                              <a href="#">{item.title.rendered}</a>
                             </div>
                             <div className="last-cart l-mrgn">
                               <a
