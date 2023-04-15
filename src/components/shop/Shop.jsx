@@ -81,174 +81,190 @@ export default function Shop() {
     <Container>
       <Row>
         <Col lg={3}>
-          <div class="all-shop-sidebar">
-            <div class="top-shop-sidebar">
-              <h3 class="wg-title">SHOP BY</h3>
+          <div className="all-shop-sidebar">
+            <div className="top-shop-sidebar">
+              <h3 className="wg-title">SHOP BY</h3>
             </div>
-            <div class="shop-one">
-              <h3 class="wg-title2">Categories</h3>
-              <ul class="product-categories">
-                <li class="cat-item">
+            <div className="shop-one">
+              <h3 className="wg-title2">Categories</h3>
+              <ul className="product-categories">
+                <li className="cat-item">
                   <a href="#">Accessories</a>
-                  <span class="count">(10)</span>
+                  <span className="count">(10)</span>
                 </li>
-                <li class="cat-item">
+                <li className="cat-item">
                   <a href="#">Jewelry</a>
-                  <span class="count">(8)</span>
+                  <span className="count">(8)</span>
                 </li>
-                <li class="cat-item current-cat">
+                <li className="cat-item current-cat">
                   <a href="#">Men</a>
-                  <span class="count">(5)</span>
+                  <span className="count">(5)</span>
                 </li>
-                <li class="cat-item">
+                <li className="cat-item">
                   <a href="#">Watches</a>
-                  <span class="count">(6)</span>
+                  <span className="count">(6)</span>
                 </li>
-                <li class="cat-item">
+                <li className="cat-item">
                   <a href="#">Women</a>
-                  <span class="count">(10)</span>
+                  <span className="count">(10)</span>
                 </li>
               </ul>
             </div>
-            <div class="shop-one">
-              <h3 class="wg-title2">Our Brand</h3>
-              <ul class="product-categories">
-                <li class="cat-item">
+            <div className="shop-one">
+              <h3 className="wg-title2">Our Brand</h3>
+              <ul className="product-categories">
+                <li className="cat-item">
                   <a href="#">Nike</a>
-                  <span class="count">(1)</span>
+                  <span className="count">(1)</span>
                 </li>
-                <li class="cat-item">
+                <li className="cat-item">
                   <a href="#">Religion</a>
-                  <span class="count">(1)</span>
+                  <span className="count">(1)</span>
                 </li>
-                <li class="cat-item-10">
+                <li className="cat-item-10">
                   <a href="#">Diesel</a>
-                  <span class="count">(1)</span>
+                  <span className="count">(1)</span>
                 </li>
-                <li class="cat-item">
+                <li className="cat-item">
                   <a href="#">Monki</a>
-                  <span class="count">(1)</span>
+                  <span className="count">(1)</span>
                 </li>
               </ul>
             </div>
-            <div class="shop-one">
-              <h3 class="wg-title2">Choose Price</h3>
-              <div class="widget shop-filter">
-                <div class="info_widget">
-                  <div class="price_filter">
+            <div className="shop-one">
+              <h3 className="wg-title2">Choose Price</h3>
+              <div className="widget shop-filter">
+                <div className="info_widget">
+                  <div className="price_filter">
                     <div id="slider-range"></div>
                     <div id="amount">
                       <input
                         type="text"
                         name="first_price"
-                        class="first_price"
+                        className="first_price"
                       />
-                      <input type="text" name="last_price" class="last_price" />
-                      <button class="button-shop" type="submit">
-                        <i class="fa fa-search search-icon"></i>
+                      <input
+                        type="text"
+                        name="last_price"
+                        className="last_price"
+                      />
+                      <button className="button-shop" type="submit">
+                        <i className="fa fa-search search-icon"></i>
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="shop-one">
-              <h3 class="wg-title2">Choose Color</h3>
-              <ul class="product-categories">
-                <li class="cat-item cat-item-11">
+            <div className="shop-one">
+              <h3 className="wg-title2">Choose Color</h3>
+              <ul className="product-categories">
+                <li className="cat-item cat-item-11">
                   <a href="#">Black</a>
-                  <span class="count">(1)</span>
+                  <span className="count">(1)</span>
                 </li>
-                <li class="cat-item cat-item-8">
+                <li className="cat-item cat-item-8">
                   <a href="#">Orange</a>
-                  <span class="count">(1)</span>
+                  <span className="count">(1)</span>
                 </li>
               </ul>
             </div>
-            <div class="top-shop-sidebar sim">
-              <h3 class="wg-title">Compare Products</h3>
-              <ul class="products-list">
-                <li class="cat-item cat-item-11">No products to compare</li>
+            <div className="top-shop-sidebar sim">
+              <h3 className="wg-title">Compare Products</h3>
+              <ul className="products-list">
+                <li className="cat-item cat-item-11">No products to compare</li>
               </ul>
-              <a class="clear-all" href="#">
+              <a className="clear-all" href="#">
                 Clear all
               </a>
-              <a class="blog8" href="#">
+              <a className="blog8" href="#">
                 Compare
               </a>
             </div>
-            <div class="top-shop-sidebar sim2">
-              <h3 class="wg-title">Community Pool</h3>
+            <div className="top-shop-sidebar sim2">
+              <h3 className="wg-title">Community Pool</h3>
             </div>
-            <div class="shop-one">
-              <ul class="product-categories">
-                <li class="cat-item cat-item-11">
+            <div className="shop-one">
+              <ul className="product-categories">
+                <li className="cat-item cat-item-11">
                   <a href="#">Black</a>
-                  <span class="count">(1)</span>
+                  <span className="count">(1)</span>
                 </li>
-                <li class="cat-item cat-item-8">
+                <li className="cat-item cat-item-8">
                   <a href="#">Orange</a>
-                  <span class="count">(1)</span>
+                  <span className="count">(1)</span>
                 </li>
               </ul>
             </div>
-            <div class="top-shop-sidebar an-shop">
-              <h3 class="wg-title">BEST SELLER</h3>
+            <div className="top-shop-sidebar an-shop">
+              <h3 className="wg-title">BEST SELLER</h3>
               <ul>
-                <li class="b-none">
-                  <div class="tb-recent-thumbb">
+                <li className="b-none">
+                  <div className="tb-recent-thumbb">
                     <a href="">
-                      <img class="attachment" src="img/product/p1.jpg" alt="" />
+                      <img
+                        className="attachment"
+                        src="img/product/p1.jpg"
+                        alt=""
+                      />
                     </a>
                   </div>
-                  <div class="tb-recentb">
-                    <div class="tb-beg">
+                  <div className="tb-recentb">
+                    <div className="tb-beg">
                       <a href="#">Lambskin Shoe</a>
                     </div>
-                    <div class="tb-product-price font-noraure-3">
-                      <span class="amount">$180.00</span>
-                      <span class="amount2 ana">$170.00</span>
+                    <div className="tb-product-price font-noraure-3">
+                      <span className="amount">$180.00</span>
+                      <span className="amount2 ana">$170.00</span>
                     </div>
                   </div>
                 </li>
-                <li class="b-none">
-                  <div class="tb-recent-thumbb">
+                <li className="b-none">
+                  <div className="tb-recent-thumbb">
                     <a href="">
-                      <img class="attachment" src="img/product/p2.jpg" alt="" />
+                      <img
+                        className="attachment"
+                        src="img/product/p2.jpg"
+                        alt=""
+                      />
                     </a>
                   </div>
-                  <div class="tb-recentb">
-                    <div class="tb-beg">
+                  <div className="tb-recentb">
+                    <div className="tb-beg">
                       <a href="#">Luxury Leather Bag</a>
                     </div>
-                    <div class="tb-product-price font-noraure-3">
-                      <span class="amount2 ana">$170.00</span>
+                    <div className="tb-product-price font-noraure-3">
+                      <span className="amount2 ana">$170.00</span>
                     </div>
                   </div>
                 </li>
-                <li class="b-none agn">
-                  <div class="tb-recent-thumbb">
+                <li className="b-none agn">
+                  <div className="tb-recent-thumbb">
                     <a href="">
-                      <img class="attachment" src="img/product/p3.jpg" alt="" />
+                      <img
+                        className="attachment"
+                        src="img/product/p3.jpg"
+                        alt=""
+                      />
                     </a>
                   </div>
-                  <div class="tb-recentb">
-                    <div class="tb-beg">
+                  <div className="tb-recentb">
+                    <div className="tb-beg">
                       <a href="#">Vintage Glasses</a>
                     </div>
-                    <div class="tb-product-price font-noraure-3">
-                      <span class="amount2 ana">$170.00</span>
+                    <div className="tb-product-price font-noraure-3">
+                      <span className="amount2 ana">$170.00</span>
                     </div>
                   </div>
                 </li>
               </ul>
             </div>
-            <div class="ro-info-box-wrap tpl3 st">
-              <div class="tb-image">
+            <div className="ro-info-box-wrap tpl3 st">
+              <div className="tb-image">
                 <img src="img/product/a1.jpg" alt="" />
               </div>
-              <div class="tb-content">
-                <div class="tb-content-inner an-inner">
+              <div className="tb-content">
+                <div className="tb-content-inner an-inner">
                   <h5>WOMEN'S FASHION</h5>
                   <h3>MID SEASON SALE</h3>
                   <h6>
@@ -263,19 +279,19 @@ export default function Shop() {
           <Row>
             <Col>
               {/* <!-- Nav tabs --> */}
-              <div class="shop-all-tab">
-                <div class="two-part">
-                  <ul class="nav tabs" role="tablist">
-                    <li class="vali">View as:</li>
+              <div className="shop-all-tab">
+                <div className="two-part">
+                  <ul className="nav tabs" role="tablist">
+                    <li className="vali">View as:</li>
                     <li role="presentation">
                       <a
                         href="#home"
-                        class="active"
+                        className="active"
                         aria-controls="home"
                         role="tab"
                         data-bs-toggle="tab"
                       >
-                        <i class="fa fa-th-large"></i>
+                        <i className="fa fa-th-large"></i>
                       </a>
                     </li>
                     <li role="presentation">
@@ -285,12 +301,12 @@ export default function Shop() {
                         role="tab"
                         data-bs-toggle="tab"
                       >
-                        <i class="fa fa-align-justify"></i>
+                        <i className="fa fa-align-justify"></i>
                       </a>
                     </li>
                   </ul>
-                  <div class="sort-by">
-                    <div class="shop6">
+                  <div className="sort-by">
+                    <div className="shop6">
                       <label>Sort By :</label>
                       <select>
                         <option value="">Default sorting</option>
@@ -302,7 +318,7 @@ export default function Shop() {
                     </div>
                   </div>
                 </div>
-                <div class="shop5">
+                <div className="shop5">
                   <label>Show :</label>
                   <select>
                     <option value="">12</option>
@@ -316,7 +332,7 @@ export default function Shop() {
           <Container className="d-flex flex-wrap mb-3 ml-lg-3 mx-xs-auto">
             {products &&
               products.map((item) => (
-                <Col className="mr-2 px-2" lg={4} md={6} sm={12}>
+                <Col key={item.id} className="mr-2 px-2" lg={4} md={6} sm={12}>
                   <div className="tb-product-item-inner tb2 pct-last">
                     <span className="onsale two">Sale!</span>
                     <img alt="" src={item.product_images_1} />

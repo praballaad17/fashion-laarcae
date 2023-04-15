@@ -85,7 +85,7 @@ export default function Home() {
               <div className="features-tab indicator-style2">
                 {/* <!-- Nav tabs --> */}
                 <ul className="nav nav-tabs" role="tablist">
-                  <li role="presentation" className="vc_tta-tab">
+                  <li role="presentation" className="vc_tta-tab mx-2">
                     <a
                       className={`${activeTab == 1 ? "active" : ""}`}
                       aria-controls="home"
@@ -96,7 +96,7 @@ export default function Home() {
                       BESTSELLER
                     </a>
                   </li>
-                  <li className="vc_tta-tab" role="presentation">
+                  <li className="vc_tta-tab mx-2" role="presentation">
                     <a
                       className={`${activeTab == 2 ? "active" : ""}`}
                       aria-controls="profile"
@@ -107,7 +107,7 @@ export default function Home() {
                       NEW PRODUCTS
                     </a>
                   </li>
-                  <li className="vc_tta-tab" role="presentation">
+                  <li className="vc_tta-tab mx-2" role="presentation">
                     <a
                       className={`${activeTab == 3 ? "active" : ""}`}
                       aria-controls="messages"

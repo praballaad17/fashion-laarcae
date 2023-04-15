@@ -31,8 +31,8 @@ export default function ProductModal({ onClose, open, product }) {
                 </div>
               </div>
               <p>{product.content.rendered}</p>
-              <div class="last-cart l-mrgn ns">
-                <a class="las4" href="#">
+              <div className="last-cart l-mrgn ns">
+                <a className="las4" href="#">
                   Add To Cart
                 </a>
               </div>

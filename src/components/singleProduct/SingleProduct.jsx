@@ -32,7 +32,6 @@ export default function SingleProduct() {
     email: "",
     content: "",
   });
-  console.log(bigImg, imgStyle);
 
   useEffect(() => {
     setImgStyle({
@@ -60,7 +59,6 @@ export default function SingleProduct() {
   }, []);
 
   const handleMouseMove = (e) => {
-    const { left, top, width, height } = e.target.getBoundingClientRect();
     console.log(left, top, width, height);
     const x = ((e.pageX - left) / width) * 100;
     const y = ((e.pageY - top) / height) * 100;
@@ -157,7 +155,12 @@ export default function SingleProduct() {
                           </div>
                           <div className="stock">
                             Avaiability:
-                            <span> in stock</span>
+                            <span>
+                              {" "}
+                              {product.is_available.toLowerCase() === "yes"
+                                ? "in stock"
+                                : "out of Stock"}
+                            </span>
                           </div>
                         </div>
                         <div className="description">

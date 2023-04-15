@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useUser } from "../context/userContext";
 import * as ROUTES from "../constant/routes";
+import { Country, State, City } from "country-state-city";
 
 import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
@@ -12,8 +13,19 @@ import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cartProducts, total, changeQuantity } = useUser();
+  const [countryCode, setCountryCode] = useState();
+  const [stateCode, setStateCode] = useState();
+  const [cities, setCitites] = useState();
+  const [states, setSates] = useState();
+  const contries = Country.getAllCountries();
 
-  console.log(cartProducts);
+  useEffect(() => {
+    setSates(State.getStatesOfCountry(countryCode));
+  }, [countryCode]);
+
+  useEffect(() => {
+    setCitites(City.getCitiesOfState(countryCode, stateCode));
+  }, [countryCode, stateCode]);
 
   let tenInt = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
@@ -95,13 +107,13 @@ export default function Cart() {
                 )}
               </table>
             </div>
-            <div className="last-check1">
+            {/* <div className="last-check1">
               <div className="yith-wcwl-share yit">
                 <p className="checkout-coupon an-cop">
                   <input type="submit" value="Update Cart" />
                 </p>
               </div>
-            </div>
+            </div> */}
           </Col>
         </Row>
         <Row className="mt-3">
@@ -141,25 +153,53 @@ export default function Cart() {
                             Country
                             <span className="required">*</span>
                           </label>
-                          <select className="email s-email s-wid">
-                            <option>Bangladesh</option>
-                            <option>Albania</option>
-                            <option>Åland Islands</option>
-                            <option>Afghanistan</option>
-                            <option>Belgium</option>
+                          <select
+                            onChange={(e) => setCountryCode(e.target.value)}
+                            className="email s-email s-wid"
+                          >
+                            {contries &&
+                              contries.map((country) => (
+                                <option
+                                  key={country.isoCode}
+                                  value={country.isoCode}
+                                >
+                                  {country.name}
+                                </option>
+                              ))}
                           </select>
                         </p>
                         <p className="form-row form-row-wide">
                           <label>
-                            District
+                            State
+                            <span className="required">*</span>
+                          </label>
+                          <select
+                            onChange={(e) => setStateCode(e.target.value)}
+                            className="email s-email s-wid"
+                          >
+                            {states &&
+                              states.map((state) => (
+                                <option
+                                  key={state.isoCode}
+                                  value={state.isoCode}
+                                >
+                                  {state.name}
+                                </option>
+                              ))}
+                          </select>
+                        </p>
+                        <p className="form-row form-row-wide">
+                          <label>
+                            City
                             <span className="required">*</span>
                           </label>
                           <select className="email s-email s-wid">
-                            <option>mymensingh</option>
-                            <option>dhaka</option>
-                            <option>khulna</option>
-                            <option>kumillah</option>
-                            <option>chadpur</option>
+                            {cities &&
+                              cities.map((city) => (
+                                <option key={city.isoCode} value={city.isoCode}>
+                                  {city.name}
+                                </option>
+                              ))}
                           </select>
                         </p>
                         <p className="form-row form-row-wide">

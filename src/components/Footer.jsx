@@ -180,16 +180,6 @@ export default function Footer() {
                           <FontAwesomeIcon icon={faLinkedinIn} />
                         </a>
                       </li>
-                      <li>
-                        <a href="#">
-                          <FontAwesomeIcon icon={faRss} />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <FontAwesomeIcon icon={faDribbble} />
-                        </a>
-                      </li>
                     </ul>
                   </div>
                 </div>
@@ -204,7 +194,8 @@ export default function Footer() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="footer-address">
                 <address>
-                  Copyright ©<Link to={ROUTES.DASHBOARD}>Fashion La'Arcae</Link>
+                  Copyright ©{" "}
+                  <Link to={ROUTES.DASHBOARD}> Fashion La'Arcae </Link>
                   All Rights Reserved
                 </address>
               </div>

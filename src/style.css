@@ -1238,7 +1238,7 @@ a.min1:hover {
 .design-area .vc_tta-tab::before {
   background: #cacaca none repeat scroll 0 0;
   content: "";
-  height: 20px;
+  height: 22px;
   position: absolute;
   right: 0;
   top: 10px;
@@ -4401,6 +4401,16 @@ p.checkout-coupon.full input[type="submit"] {
   overflow: hidden;
 }
 /*--------------------- 17. single-product--------------------*/
+#zoom-figure {
+  width: 400px;
+  /* height: 400px; */
+  /* background-repeat: no-repeat; */
+}
+#zoom-figure img {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
 
 #zoom-figure:hover img {
   opacity: 0;

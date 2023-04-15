@@ -100,7 +100,7 @@ export function UserProvider({ userId, children }) {
 
   const getProducts = async () => {
     const { data } = await axios.get(
-      `${apiEndpoint}/product?_fields=title,id,price,product_images_1,discounted_price,product_images_2,product_images_3,product_images_4,content`
+      `${apiEndpoint}/product?_fields=title,id,price,product_images_1,discounted_price,product_images_2,product_images_3,is_available,content`
     );
     setProducts(data);
   };
