@@ -15,6 +15,11 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
+import payment1 from "/img/icon-img/payment-1.jpg";
+import payment2 from "/img/icon-img/payment-2.jpg";
+import payment3 from "/img/icon-img/payment-3.jpg";
+import payment4 from "/img/icon-img/payment-4.jpg";
+
 export default function Footer() {
   return (
     <footer className="footer-area">
@@ -205,22 +210,22 @@ export default function Footer() {
                 <ul>
                   <li>
                     <a href="#">
-                      <img src="/img/icon-img/payment-1.jpg" alt="" />
+                      <img src={payment1} alt="" />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="/img/icon-img/payment-2.jpg" alt="" />
+                      <img src={payment2} alt="" />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="/img/icon-img/payment-3.jpg" alt="" />
+                      <img src={payment3} alt="" />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img src="/img/icon-img/payment-4.jpg" alt="" />
+                      <img src={payment4} alt="" />
                     </a>
                   </li>
                 </ul>

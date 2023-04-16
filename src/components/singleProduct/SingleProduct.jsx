@@ -40,7 +40,7 @@ export default function SingleProduct() {
     });
   }, [bigImg]);
 
-  const apiEndpoint = `https://fashion.laarcae.com/wp-json/wp/v2`;
+  const apiEndpoint = `https://server.fashion.laarcae.com/wp-json/wp/v2`;
 
   useEffect(() => {
     const getProduct = async () => {
@@ -59,7 +59,7 @@ export default function SingleProduct() {
   }, []);
 
   const handleMouseMove = (e) => {
-    console.log(left, top, width, height);
+    const { left, top, width, height } = e.target.getBoundingClientRect();
     const x = ((e.pageX - left) / width) * 100;
     const y = ((e.pageY - top) / height) * 100;
     setImgStyle({ ...imgStyle, backgroundPosition: `${x}% ${y}%` });

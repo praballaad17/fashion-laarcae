@@ -8,7 +8,7 @@ import React, {
 import { useToast } from "./toastContext";
 import axios from "axios";
 
-const apiEndpoint = `https://fashion.laarcae.com/wp-json/wp/v2`;
+const apiEndpoint = `https://server.fashion.laarcae.com/wp-json/wp/v2`;
 const UserContext = createContext();
 
 export function useUser() {

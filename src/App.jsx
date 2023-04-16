@@ -21,7 +21,7 @@ import Footer from "./components/Footer";
 // import ToastBox from "./components/toast/ToastBox";
 
 const Shop = lazy(() => import("./components/shop/Shop"));
-const Cart = lazy(() => import("./components/Cart"));
+const Cart = lazy(() => import("./components/cart/Cart"));
 const WishList = lazy(() => import("./components/WishList"));
 const Login = lazy(() => import("./components/Login"));
 const Checkout = lazy(() => import("./components/Checkout"));

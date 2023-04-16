@@ -11,6 +11,10 @@ import ProductModal from "./ProductModal";
 import { useUser } from "../context/userContext";
 import { useToast } from "../context/toastContext";
 
+import baner1 from "/img/banner/img-1.jpg";
+import baner2 from "/img/banner/img-2.jpg";
+import baner3 from "/img/banner/img-3.jpg";
+
 export default function Home() {
   const [activeTab, setTab] = useState(2);
   const [open, setOpen] = useState(false);
@@ -20,7 +24,6 @@ export default function Home() {
 
   useEffect(() => {
     getProducts();
-    console.log(products);
   }, []);
 
   const navtab = {
@@ -39,7 +42,7 @@ export default function Home() {
               <div className="col-lg-8 col-md-8 col-12">
                 <div className="tb-info-box">
                   <div className="tb-image">
-                    <img alt="" src="/img/banner/img-1.jpg" />
+                    <img alt="" src={baner1} />
                   </div>
                   <div className="tb-content">
                     <h5>NEW DESIGN</h5>
@@ -58,14 +61,14 @@ export default function Home() {
                     </h6>
                   </div>
                   <div className="tb-image tb-right">
-                    <img alt="" src="/img/banner/img-2.jpg" />
+                    <img alt="" src={baner2} />
                   </div>
                 </div>
               </div>
               <div className="col-lg-4 col-md-4 col-12">
                 <div className="ro-info-box-wrap tpl3 fs">
                   <div className="tb-image">
-                    <img alt="" src="/img/banner/img-3.jpg" />
+                    <img alt="" src={baner3} />
                   </div>
                   <div className="tb-content">
                     <div className="tb-content-inner">

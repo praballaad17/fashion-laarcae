@@ -15,7 +15,7 @@ export default function Login() {
   const [loginUser, setLoginUser] = useState();
   const { addToast } = useToast();
 
-  const apiEndpoint = `https://fashion.laarcae.com/wp-json`;
+  const apiEndpoint = `https://server.fashion.laarcae.com/wp-json`;
 
   const handleRegister = async (e) => {
     e.preventDefault();
